@@ -1,5 +1,5 @@
 LIV_ECO = function(layers, subgoal, liv_workforcesize_year=2009, eco_rev_adj_min_year=2000){
-  # Israel: no wages data so LIV just based on jobs, removed missing regions addendum from 2013 global
+  # Israel: no wages data so LIV just based on jobs, removed missing regions addendum from 2013 global and georegional gapfilling.
   
   g.component = c('LIV'='livelihood','ECO'='economy')[[subgoal]]
   
