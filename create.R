@@ -17,39 +17,35 @@ library(devtools)
 load_all(dirs$ohicore)
 
 # other vars
-f_spatial    = c(sprintf('%s/Israel/Hamaarag-Regions_v2014a/data/regions_gcs.js', dirs$ohiprep))
-dir_conf_in  = sprintf('%s/inst/extdata/conf.Global2013.www2013'  , dirs$ohicore)
-dir_lyrs_in  = sprintf('%s/inst/extdata/layers.Global2013.www2013', dirs$ohicore)
+f_spatial    = '../ohiprep/Israel/Hamaarag-Regions_v2014a/data/regions_gcs.js'
+dir_conf_in  = '../ohi-global/eez2013/conf'
+dir_lyrs_in  = '../ohi-global/eez2013/layers'
 
 # create dirs
 for (dir in c('tmp','layers','conf','spatial')) dir.create(dir, showWarnings=F)
 
-# load Google spreadsheet for 2013 layers
-g.url = 'https://docs.google.com/spreadsheet/pub?key=0At9FvPajGTwJdEJBeXlFU2ladkR6RHNvbldKQjhiRlE&output=csv'
-g0 = read.csv(textConnection(RCurl::getURL(g.url, ssl.verifypeer = FALSE)), skip=1, na.strings='')
-write.csv(g0, 'tmp/layers_navigation_2012a_2013a.csv', na='', row.names=F)
+# load layers from 2013
+lyrs = read.csv('../ohi-global/eez2013/layers.csv')
+write.csv(lyrs, 'tmp/layers_eez2013.csv', na='', row.names=F)
 
 # modify
-lyrs = g0 %.%
-  filter(ingest==T) %.%
+lyrs = lyrs %.%
   select(
-    targets, layer, layer_old, name, description, 
-    citation_nature2012, citation_plos2013, 
+    targets, layer, name, description, 
     fld_value, units,
-    dir_2013a, fn_2013a) %.%
+    filename_old=filename) %.%
   mutate(
     filename = sprintf('%s_global2013.csv', layer)) %.%
   arrange(targets, layer)
 write.csv(lyrs, 'tmp/layers.csv', na='', row.names=F)
 
 # csvs for regions and countries
-rgn_new_csv   = '../ohiprep/Israel/Hamaarag-Regions_v2014a/data/rgn_data.csv'
-rgn_old_csv   = sprintf('%s/%s', dir_lyrs_in, subset(lyrs, layer=='rgn_labels', fn_2013a, drop=T))
-cntry_old_csv = sprintf('%s/%s', dir_lyrs_in, subset(lyrs, layer=='cntry_rgn' , fn_2013a, drop=T))
+rgn_new_csv   = '../ohiprep/Israel/Hamaarag-Regions_v2014a/data/rgn_offshore_data.csv'
+rgn_old_csv   = sprintf('%s/rgn_labels.csv', dir_lyrs_in)
+cntry_old_csv = sprintf('%s/cntry_rgn.csv', dir_lyrs_in)
 
 # old to new regions
 rgn_new = read.csv(rgn_new_csv) %.%
-  filter(rgn_type=='eez') %.%
   select(rgn_id_new=rgn_id, rgn_name_new=rgn_name) %.%
   mutate(rgn_name_old = 'Israel') %.%
   merge(
@@ -71,7 +67,7 @@ cntry_new = read.csv(cntry_old_csv) %.%
   as.data.frame()
 
 for (i in 1:nrow(lyrs)){ # i=1
-  csv_in  = sprintf('%s/%s', dir_lyrs_in, lyrs$fn_2013a[i])
+  csv_in  = sprintf('%s/%s', dir_lyrs_in, lyrs$filename_old[i])
   csv_out = sprintf('layers/%s', lyrs$filename[i])
   
   d = read.csv(csv_in, na.strings='')
@@ -110,7 +106,7 @@ for (f in list.files('tmp/layers_custom', full.names=T)){ # f = list.files('tmp/
 }
 
 # layers registry
-write.csv(select(lyrs, -dir_2013a, -fn_2013a, -layer_old), 'layers.csv', row.names=F, na='')
+write.csv(select(lyrs, -filename_old), 'layers.csv', row.names=F, na='')
 
 # run checks on layers
 CheckLayers('layers.csv', 'layers', 
@@ -122,17 +118,19 @@ lyrs = lyrs %.%
 
 # copy configuration files
 conf_files = c('config.R','functions.R','goals.csv','pressures_matrix.csv','resilience_matrix.csv','resilience_weights.csv')
-for (f in conf_files){ # f = conf_files[2]
+for (f in conf_files){ # f = conf_files[1]
   
   f_in  = sprintf('%s/%s', dir_conf_in, f)
   f_out = sprintf('conf/%s', f)
   
-  # substitute old layer names with new
+  # read in file
   s = readLines(f_in, warn=F, encoding='UTF-8')
-  for (i in 1:nrow(lyrs)){ # i=1
-    s = gsub(lyrs$layer_old[i], lyrs$layer[i], s, fixed=T)
-  }
-  writeLines(s, f_out)
+  
+#   # substitute old layer names with new
+#   for (i in 1:nrow(lyrs)){ # i=1
+#     s = gsub(lyrs$layer_old[i], lyrs$layer[i], s, fixed=T)
+#   }
+#   writeLines(s, f_out)
   
   # update confugration
   if (f=='config.R'){
@@ -160,24 +158,17 @@ for (f in list.files('tmp/layers_custom', full.names=T)){ # f = list.files('tmp/
 
 # calculate scores
 layers = Layers('layers.csv', 'layers')
-conf   = Conf('conf')
+conf   = Conf('conf') # load_all(dirs$ohicore)
 scores = CalculateAll(conf, layers, debug=T)
 write.csv(scores, 'scores.csv', na='', row.names=F)
 
 # spatial
 for (f in f_spatial){ # f = f_spatial[1]
-  file.copy(f, sprintf('spatial/%s', basename(f)))
+  file.copy(f, sprintf('spatial/%s', basename(f)), overwrite=T)
 }
  
-# create shortcuts
-WriteScenario(
-  scenario = list(
-    conf    = conf, 
-    layers  = layers, 
-    scores  = scores,
-    spatial = 'spatial',
-    dir     = '.'),
-  make_all_launchApp=T)
+# save shortcut files not specific to operating system
+write_shortcuts('.', os_files=1)
 
 # launch on Mac
-system('open launchApp.command')
+system('open launch_app.command')

@@ -1,29 +1,43 @@
 "rgn_id","species","sust_coeff"
-3,"Barramundi(=Giant seaperch)",0.444010417
-4,"Barramundi(=Giant seaperch)",0.444010417
-2,"Barramundi(=Giant seaperch)",0.444010417
 1,"Barramundi(=Giant seaperch)",0.444010417
-3,"Cupped oysters nei",0.888095238
-4,"Cupped oysters nei",0.888095238
-2,"Cupped oysters nei",0.888095238
+4,"Barramundi(=Giant seaperch)",0.444010417
+5,"Barramundi(=Giant seaperch)",0.444010417
+2,"Barramundi(=Giant seaperch)",0.444010417
+3,"Barramundi(=Giant seaperch)",0.444010417
+6,"Barramundi(=Giant seaperch)",0.444010417
 1,"Cupped oysters nei",0.888095238
-3,"European seabass",0.452222222
-4,"European seabass",0.452222222
-2,"European seabass",0.452222222
+4,"Cupped oysters nei",0.888095238
+5,"Cupped oysters nei",0.888095238
+2,"Cupped oysters nei",0.888095238
+3,"Cupped oysters nei",0.888095238
+6,"Cupped oysters nei",0.888095238
 1,"European seabass",0.452222222
-3,"Gilthead seabream",0.286111111
-4,"Gilthead seabream",0.286111111
-2,"Gilthead seabream",0.286111111
+4,"European seabass",0.452222222
+5,"European seabass",0.452222222
+2,"European seabass",0.452222222
+3,"European seabass",0.452222222
+6,"European seabass",0.452222222
 1,"Gilthead seabream",0.286111111
-3,"Marine fishes nei",0.477777778
-4,"Marine fishes nei",0.477777778
-2,"Marine fishes nei",0.477777778
+4,"Gilthead seabream",0.286111111
+5,"Gilthead seabream",0.286111111
+2,"Gilthead seabream",0.286111111
+3,"Gilthead seabream",0.286111111
+6,"Gilthead seabream",0.286111111
 1,"Marine fishes nei",0.477777778
-3,"Red drum",0.366666667
-4,"Red drum",0.366666667
-2,"Red drum",0.366666667
+4,"Marine fishes nei",0.477777778
+5,"Marine fishes nei",0.477777778
+2,"Marine fishes nei",0.477777778
+3,"Marine fishes nei",0.477777778
+6,"Marine fishes nei",0.477777778
 1,"Red drum",0.366666667
-3,"Striped bass, hybrid",0.444010417
-4,"Striped bass, hybrid",0.444010417
-2,"Striped bass, hybrid",0.444010417
+4,"Red drum",0.366666667
+5,"Red drum",0.366666667
+2,"Red drum",0.366666667
+3,"Red drum",0.366666667
+6,"Red drum",0.366666667
 1,"Striped bass, hybrid",0.444010417
+4,"Striped bass, hybrid",0.444010417
+5,"Striped bass, hybrid",0.444010417
+2,"Striped bass, hybrid",0.444010417
+3,"Striped bass, hybrid",0.444010417
+6,"Striped bass, hybrid",0.444010417

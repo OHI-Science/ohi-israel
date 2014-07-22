@@ -1,0 +1,793 @@
+"rgn_id","species","species_code","sust_coeff","year","sm_tonnes"
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+1,"Cupped oysters nei",684,0.888095238,"2000",0
+1,"European seabass",94,0.452222222,"2000",54
+1,"European seabass",685,0.452222222,"2000",236.666666666667
+1,"Gilthead seabream",95,0.286111111,"2000",0
+1,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+1,"Marine fishes nei",96,0.477777778,"2000",0
+1,"Marine fishes nei",687,0.477777778,"2000",35
+1,"Red drum",97,0.366666667,"2000",99
+1,"Red drum",688,0.366666667,"2000",148.666666666667
+1,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+2,"Cupped oysters nei",684,0.888095238,"2000",0
+2,"European seabass",94,0.452222222,"2000",54
+2,"European seabass",685,0.452222222,"2000",236.666666666667
+2,"Gilthead seabream",95,0.286111111,"2000",0
+2,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+2,"Marine fishes nei",96,0.477777778,"2000",0
+2,"Marine fishes nei",687,0.477777778,"2000",35
+2,"Red drum",97,0.366666667,"2000",99
+2,"Red drum",688,0.366666667,"2000",148.666666666667
+2,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+3,"Cupped oysters nei",684,0.888095238,"2000",0
+3,"European seabass",94,0.452222222,"2000",54
+3,"European seabass",685,0.452222222,"2000",236.666666666667
+3,"Gilthead seabream",95,0.286111111,"2000",0
+3,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+3,"Marine fishes nei",96,0.477777778,"2000",0
+3,"Marine fishes nei",687,0.477777778,"2000",35
+3,"Red drum",97,0.366666667,"2000",99
+3,"Red drum",688,0.366666667,"2000",148.666666666667
+3,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+4,"Cupped oysters nei",684,0.888095238,"2000",0
+4,"European seabass",94,0.452222222,"2000",54
+4,"European seabass",685,0.452222222,"2000",236.666666666667
+4,"Gilthead seabream",95,0.286111111,"2000",0
+4,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+4,"Marine fishes nei",96,0.477777778,"2000",0
+4,"Marine fishes nei",687,0.477777778,"2000",35
+4,"Red drum",97,0.366666667,"2000",99
+4,"Red drum",688,0.366666667,"2000",148.666666666667
+4,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+5,"Cupped oysters nei",684,0.888095238,"2000",0
+5,"European seabass",94,0.452222222,"2000",54
+5,"European seabass",685,0.452222222,"2000",236.666666666667
+5,"Gilthead seabream",95,0.286111111,"2000",0
+5,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+5,"Marine fishes nei",96,0.477777778,"2000",0
+5,"Marine fishes nei",687,0.477777778,"2000",35
+5,"Red drum",97,0.366666667,"2000",99
+5,"Red drum",688,0.366666667,"2000",148.666666666667
+5,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2000",38
+6,"Cupped oysters nei",684,0.888095238,"2000",0
+6,"European seabass",94,0.452222222,"2000",54
+6,"European seabass",685,0.452222222,"2000",236.666666666667
+6,"Gilthead seabream",95,0.286111111,"2000",0
+6,"Gilthead seabream",686,0.286111111,"2000",2586.66666666667
+6,"Marine fishes nei",96,0.477777778,"2000",0
+6,"Marine fishes nei",687,0.477777778,"2000",35
+6,"Red drum",97,0.366666667,"2000",99
+6,"Red drum",688,0.366666667,"2000",148.666666666667
+6,"Striped bass, hybrid",689,0.444010417,"2000",36.6666666666667
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+1,"Cupped oysters nei",684,0.888095238,"2001",0
+1,"European seabass",94,0.452222222,"2001",68
+1,"European seabass",685,0.452222222,"2001",240.25
+1,"Gilthead seabream",95,0.286111111,"2001",0
+1,"Gilthead seabream",686,0.286111111,"2001",2576.5
+1,"Marine fishes nei",96,0.477777778,"2001",0
+1,"Marine fishes nei",687,0.477777778,"2001",27.25
+1,"Red drum",97,0.366666667,"2001",109.25
+1,"Red drum",688,0.366666667,"2001",186
+1,"Striped bass, hybrid",689,0.444010417,"2001",30
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+2,"Cupped oysters nei",684,0.888095238,"2001",0
+2,"European seabass",94,0.452222222,"2001",68
+2,"European seabass",685,0.452222222,"2001",240.25
+2,"Gilthead seabream",95,0.286111111,"2001",0
+2,"Gilthead seabream",686,0.286111111,"2001",2576.5
+2,"Marine fishes nei",96,0.477777778,"2001",0
+2,"Marine fishes nei",687,0.477777778,"2001",27.25
+2,"Red drum",97,0.366666667,"2001",109.25
+2,"Red drum",688,0.366666667,"2001",186
+2,"Striped bass, hybrid",689,0.444010417,"2001",30
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+3,"Cupped oysters nei",684,0.888095238,"2001",0
+3,"European seabass",94,0.452222222,"2001",68
+3,"European seabass",685,0.452222222,"2001",240.25
+3,"Gilthead seabream",95,0.286111111,"2001",0
+3,"Gilthead seabream",686,0.286111111,"2001",2576.5
+3,"Marine fishes nei",96,0.477777778,"2001",0
+3,"Marine fishes nei",687,0.477777778,"2001",27.25
+3,"Red drum",97,0.366666667,"2001",109.25
+3,"Red drum",688,0.366666667,"2001",186
+3,"Striped bass, hybrid",689,0.444010417,"2001",30
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+4,"Cupped oysters nei",684,0.888095238,"2001",0
+4,"European seabass",94,0.452222222,"2001",68
+4,"European seabass",685,0.452222222,"2001",240.25
+4,"Gilthead seabream",95,0.286111111,"2001",0
+4,"Gilthead seabream",686,0.286111111,"2001",2576.5
+4,"Marine fishes nei",96,0.477777778,"2001",0
+4,"Marine fishes nei",687,0.477777778,"2001",27.25
+4,"Red drum",97,0.366666667,"2001",109.25
+4,"Red drum",688,0.366666667,"2001",186
+4,"Striped bass, hybrid",689,0.444010417,"2001",30
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+5,"Cupped oysters nei",684,0.888095238,"2001",0
+5,"European seabass",94,0.452222222,"2001",68
+5,"European seabass",685,0.452222222,"2001",240.25
+5,"Gilthead seabream",95,0.286111111,"2001",0
+5,"Gilthead seabream",686,0.286111111,"2001",2576.5
+5,"Marine fishes nei",96,0.477777778,"2001",0
+5,"Marine fishes nei",687,0.477777778,"2001",27.25
+5,"Red drum",97,0.366666667,"2001",109.25
+5,"Red drum",688,0.366666667,"2001",186
+5,"Striped bass, hybrid",689,0.444010417,"2001",30
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2001",28.5
+6,"Cupped oysters nei",684,0.888095238,"2001",0
+6,"European seabass",94,0.452222222,"2001",68
+6,"European seabass",685,0.452222222,"2001",240.25
+6,"Gilthead seabream",95,0.286111111,"2001",0
+6,"Gilthead seabream",686,0.286111111,"2001",2576.5
+6,"Marine fishes nei",96,0.477777778,"2001",0
+6,"Marine fishes nei",687,0.477777778,"2001",27.25
+6,"Red drum",97,0.366666667,"2001",109.25
+6,"Red drum",688,0.366666667,"2001",186
+6,"Striped bass, hybrid",689,0.444010417,"2001",30
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+1,"Cupped oysters nei",684,0.888095238,"2002",0.5
+1,"European seabass",94,0.452222222,"2002",113
+1,"European seabass",685,0.452222222,"2002",245
+1,"Gilthead seabream",95,0.286111111,"2002",0
+1,"Gilthead seabream",686,0.286111111,"2002",2663.75
+1,"Marine fishes nei",96,0.477777778,"2002",0
+1,"Marine fishes nei",687,0.477777778,"2002",24
+1,"Red drum",97,0.366666667,"2002",190
+1,"Red drum",688,0.366666667,"2002",215.5
+1,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+2,"Cupped oysters nei",684,0.888095238,"2002",0.5
+2,"European seabass",94,0.452222222,"2002",113
+2,"European seabass",685,0.452222222,"2002",245
+2,"Gilthead seabream",95,0.286111111,"2002",0
+2,"Gilthead seabream",686,0.286111111,"2002",2663.75
+2,"Marine fishes nei",96,0.477777778,"2002",0
+2,"Marine fishes nei",687,0.477777778,"2002",24
+2,"Red drum",97,0.366666667,"2002",190
+2,"Red drum",688,0.366666667,"2002",215.5
+2,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+3,"Cupped oysters nei",684,0.888095238,"2002",0.5
+3,"European seabass",94,0.452222222,"2002",113
+3,"European seabass",685,0.452222222,"2002",245
+3,"Gilthead seabream",95,0.286111111,"2002",0
+3,"Gilthead seabream",686,0.286111111,"2002",2663.75
+3,"Marine fishes nei",96,0.477777778,"2002",0
+3,"Marine fishes nei",687,0.477777778,"2002",24
+3,"Red drum",97,0.366666667,"2002",190
+3,"Red drum",688,0.366666667,"2002",215.5
+3,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+4,"Cupped oysters nei",684,0.888095238,"2002",0.5
+4,"European seabass",94,0.452222222,"2002",113
+4,"European seabass",685,0.452222222,"2002",245
+4,"Gilthead seabream",95,0.286111111,"2002",0
+4,"Gilthead seabream",686,0.286111111,"2002",2663.75
+4,"Marine fishes nei",96,0.477777778,"2002",0
+4,"Marine fishes nei",687,0.477777778,"2002",24
+4,"Red drum",97,0.366666667,"2002",190
+4,"Red drum",688,0.366666667,"2002",215.5
+4,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+5,"Cupped oysters nei",684,0.888095238,"2002",0.5
+5,"European seabass",94,0.452222222,"2002",113
+5,"European seabass",685,0.452222222,"2002",245
+5,"Gilthead seabream",95,0.286111111,"2002",0
+5,"Gilthead seabream",686,0.286111111,"2002",2663.75
+5,"Marine fishes nei",96,0.477777778,"2002",0
+5,"Marine fishes nei",687,0.477777778,"2002",24
+5,"Red drum",97,0.366666667,"2002",190
+5,"Red drum",688,0.366666667,"2002",215.5
+5,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2002",32.25
+6,"Cupped oysters nei",684,0.888095238,"2002",0.5
+6,"European seabass",94,0.452222222,"2002",113
+6,"European seabass",685,0.452222222,"2002",245
+6,"Gilthead seabream",95,0.286111111,"2002",0
+6,"Gilthead seabream",686,0.286111111,"2002",2663.75
+6,"Marine fishes nei",96,0.477777778,"2002",0
+6,"Marine fishes nei",687,0.477777778,"2002",24
+6,"Red drum",97,0.366666667,"2002",190
+6,"Red drum",688,0.366666667,"2002",215.5
+6,"Striped bass, hybrid",689,0.444010417,"2002",21.25
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+1,"Cupped oysters nei",684,0.888095238,"2003",0.75
+1,"European seabass",94,0.452222222,"2003",130.5
+1,"European seabass",685,0.452222222,"2003",193
+1,"Gilthead seabream",95,0.286111111,"2003",45.25
+1,"Gilthead seabream",686,0.286111111,"2003",2788
+1,"Marine fishes nei",96,0.477777778,"2003",0
+1,"Marine fishes nei",687,0.477777778,"2003",4.5
+1,"Red drum",97,0.366666667,"2003",216.25
+1,"Red drum",688,0.366666667,"2003",188.75
+1,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+2,"Cupped oysters nei",684,0.888095238,"2003",0.75
+2,"European seabass",94,0.452222222,"2003",130.5
+2,"European seabass",685,0.452222222,"2003",193
+2,"Gilthead seabream",95,0.286111111,"2003",45.25
+2,"Gilthead seabream",686,0.286111111,"2003",2788
+2,"Marine fishes nei",96,0.477777778,"2003",0
+2,"Marine fishes nei",687,0.477777778,"2003",4.5
+2,"Red drum",97,0.366666667,"2003",216.25
+2,"Red drum",688,0.366666667,"2003",188.75
+2,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+3,"Cupped oysters nei",684,0.888095238,"2003",0.75
+3,"European seabass",94,0.452222222,"2003",130.5
+3,"European seabass",685,0.452222222,"2003",193
+3,"Gilthead seabream",95,0.286111111,"2003",45.25
+3,"Gilthead seabream",686,0.286111111,"2003",2788
+3,"Marine fishes nei",96,0.477777778,"2003",0
+3,"Marine fishes nei",687,0.477777778,"2003",4.5
+3,"Red drum",97,0.366666667,"2003",216.25
+3,"Red drum",688,0.366666667,"2003",188.75
+3,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+4,"Cupped oysters nei",684,0.888095238,"2003",0.75
+4,"European seabass",94,0.452222222,"2003",130.5
+4,"European seabass",685,0.452222222,"2003",193
+4,"Gilthead seabream",95,0.286111111,"2003",45.25
+4,"Gilthead seabream",686,0.286111111,"2003",2788
+4,"Marine fishes nei",96,0.477777778,"2003",0
+4,"Marine fishes nei",687,0.477777778,"2003",4.5
+4,"Red drum",97,0.366666667,"2003",216.25
+4,"Red drum",688,0.366666667,"2003",188.75
+4,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+5,"Cupped oysters nei",684,0.888095238,"2003",0.75
+5,"European seabass",94,0.452222222,"2003",130.5
+5,"European seabass",685,0.452222222,"2003",193
+5,"Gilthead seabream",95,0.286111111,"2003",45.25
+5,"Gilthead seabream",686,0.286111111,"2003",2788
+5,"Marine fishes nei",96,0.477777778,"2003",0
+5,"Marine fishes nei",687,0.477777778,"2003",4.5
+5,"Red drum",97,0.366666667,"2003",216.25
+5,"Red drum",688,0.366666667,"2003",188.75
+5,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2003",42.75
+6,"Cupped oysters nei",684,0.888095238,"2003",0.75
+6,"European seabass",94,0.452222222,"2003",130.5
+6,"European seabass",685,0.452222222,"2003",193
+6,"Gilthead seabream",95,0.286111111,"2003",45.25
+6,"Gilthead seabream",686,0.286111111,"2003",2788
+6,"Marine fishes nei",96,0.477777778,"2003",0
+6,"Marine fishes nei",687,0.477777778,"2003",4.5
+6,"Red drum",97,0.366666667,"2003",216.25
+6,"Red drum",688,0.366666667,"2003",188.75
+6,"Striped bass, hybrid",689,0.444010417,"2003",3.75
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+1,"Cupped oysters nei",684,0.888095238,"2004",0.75
+1,"European seabass",94,0.452222222,"2004",151.25
+1,"European seabass",685,0.452222222,"2004",115.5
+1,"Gilthead seabream",95,0.286111111,"2004",63.25
+1,"Gilthead seabream",686,0.286111111,"2004",2808
+1,"Marine fishes nei",96,0.477777778,"2004",0
+1,"Marine fishes nei",687,0.477777778,"2004",3.75
+1,"Red drum",97,0.366666667,"2004",277
+1,"Red drum",688,0.366666667,"2004",164.25
+1,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+2,"Cupped oysters nei",684,0.888095238,"2004",0.75
+2,"European seabass",94,0.452222222,"2004",151.25
+2,"European seabass",685,0.452222222,"2004",115.5
+2,"Gilthead seabream",95,0.286111111,"2004",63.25
+2,"Gilthead seabream",686,0.286111111,"2004",2808
+2,"Marine fishes nei",96,0.477777778,"2004",0
+2,"Marine fishes nei",687,0.477777778,"2004",3.75
+2,"Red drum",97,0.366666667,"2004",277
+2,"Red drum",688,0.366666667,"2004",164.25
+2,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+3,"Cupped oysters nei",684,0.888095238,"2004",0.75
+3,"European seabass",94,0.452222222,"2004",151.25
+3,"European seabass",685,0.452222222,"2004",115.5
+3,"Gilthead seabream",95,0.286111111,"2004",63.25
+3,"Gilthead seabream",686,0.286111111,"2004",2808
+3,"Marine fishes nei",96,0.477777778,"2004",0
+3,"Marine fishes nei",687,0.477777778,"2004",3.75
+3,"Red drum",97,0.366666667,"2004",277
+3,"Red drum",688,0.366666667,"2004",164.25
+3,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+4,"Cupped oysters nei",684,0.888095238,"2004",0.75
+4,"European seabass",94,0.452222222,"2004",151.25
+4,"European seabass",685,0.452222222,"2004",115.5
+4,"Gilthead seabream",95,0.286111111,"2004",63.25
+4,"Gilthead seabream",686,0.286111111,"2004",2808
+4,"Marine fishes nei",96,0.477777778,"2004",0
+4,"Marine fishes nei",687,0.477777778,"2004",3.75
+4,"Red drum",97,0.366666667,"2004",277
+4,"Red drum",688,0.366666667,"2004",164.25
+4,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+5,"Cupped oysters nei",684,0.888095238,"2004",0.75
+5,"European seabass",94,0.452222222,"2004",151.25
+5,"European seabass",685,0.452222222,"2004",115.5
+5,"Gilthead seabream",95,0.286111111,"2004",63.25
+5,"Gilthead seabream",686,0.286111111,"2004",2808
+5,"Marine fishes nei",96,0.477777778,"2004",0
+5,"Marine fishes nei",687,0.477777778,"2004",3.75
+5,"Red drum",97,0.366666667,"2004",277
+5,"Red drum",688,0.366666667,"2004",164.25
+5,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2004",55
+6,"Cupped oysters nei",684,0.888095238,"2004",0.75
+6,"European seabass",94,0.452222222,"2004",151.25
+6,"European seabass",685,0.452222222,"2004",115.5
+6,"Gilthead seabream",95,0.286111111,"2004",63.25
+6,"Gilthead seabream",686,0.286111111,"2004",2808
+6,"Marine fishes nei",96,0.477777778,"2004",0
+6,"Marine fishes nei",687,0.477777778,"2004",3.75
+6,"Red drum",97,0.366666667,"2004",277
+6,"Red drum",688,0.366666667,"2004",164.25
+6,"Striped bass, hybrid",689,0.444010417,"2004",3.75
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+1,"Cupped oysters nei",684,0.888095238,"2005",0.75
+1,"European seabass",94,0.452222222,"2005",128.75
+1,"European seabass",685,0.452222222,"2005",54.25
+1,"Gilthead seabream",95,0.286111111,"2005",67.5
+1,"Gilthead seabream",686,0.286111111,"2005",2718.25
+1,"Marine fishes nei",96,0.477777778,"2005",75
+1,"Marine fishes nei",687,0.477777778,"2005",3.25
+1,"Red drum",97,0.366666667,"2005",328.25
+1,"Red drum",688,0.366666667,"2005",98.75
+1,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+2,"Cupped oysters nei",684,0.888095238,"2005",0.75
+2,"European seabass",94,0.452222222,"2005",128.75
+2,"European seabass",685,0.452222222,"2005",54.25
+2,"Gilthead seabream",95,0.286111111,"2005",67.5
+2,"Gilthead seabream",686,0.286111111,"2005",2718.25
+2,"Marine fishes nei",96,0.477777778,"2005",75
+2,"Marine fishes nei",687,0.477777778,"2005",3.25
+2,"Red drum",97,0.366666667,"2005",328.25
+2,"Red drum",688,0.366666667,"2005",98.75
+2,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+3,"Cupped oysters nei",684,0.888095238,"2005",0.75
+3,"European seabass",94,0.452222222,"2005",128.75
+3,"European seabass",685,0.452222222,"2005",54.25
+3,"Gilthead seabream",95,0.286111111,"2005",67.5
+3,"Gilthead seabream",686,0.286111111,"2005",2718.25
+3,"Marine fishes nei",96,0.477777778,"2005",75
+3,"Marine fishes nei",687,0.477777778,"2005",3.25
+3,"Red drum",97,0.366666667,"2005",328.25
+3,"Red drum",688,0.366666667,"2005",98.75
+3,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+4,"Cupped oysters nei",684,0.888095238,"2005",0.75
+4,"European seabass",94,0.452222222,"2005",128.75
+4,"European seabass",685,0.452222222,"2005",54.25
+4,"Gilthead seabream",95,0.286111111,"2005",67.5
+4,"Gilthead seabream",686,0.286111111,"2005",2718.25
+4,"Marine fishes nei",96,0.477777778,"2005",75
+4,"Marine fishes nei",687,0.477777778,"2005",3.25
+4,"Red drum",97,0.366666667,"2005",328.25
+4,"Red drum",688,0.366666667,"2005",98.75
+4,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+5,"Cupped oysters nei",684,0.888095238,"2005",0.75
+5,"European seabass",94,0.452222222,"2005",128.75
+5,"European seabass",685,0.452222222,"2005",54.25
+5,"Gilthead seabream",95,0.286111111,"2005",67.5
+5,"Gilthead seabream",686,0.286111111,"2005",2718.25
+5,"Marine fishes nei",96,0.477777778,"2005",75
+5,"Marine fishes nei",687,0.477777778,"2005",3.25
+5,"Red drum",97,0.366666667,"2005",328.25
+5,"Red drum",688,0.366666667,"2005",98.75
+5,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2005",80
+6,"Cupped oysters nei",684,0.888095238,"2005",0.75
+6,"European seabass",94,0.452222222,"2005",128.75
+6,"European seabass",685,0.452222222,"2005",54.25
+6,"Gilthead seabream",95,0.286111111,"2005",67.5
+6,"Gilthead seabream",686,0.286111111,"2005",2718.25
+6,"Marine fishes nei",96,0.477777778,"2005",75
+6,"Marine fishes nei",687,0.477777778,"2005",3.25
+6,"Red drum",97,0.366666667,"2005",328.25
+6,"Red drum",688,0.366666667,"2005",98.75
+6,"Striped bass, hybrid",689,0.444010417,"2005",1.25
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+1,"Cupped oysters nei",684,0.888095238,"2006",0.25
+1,"European seabass",94,0.452222222,"2006",130.25
+1,"European seabass",685,0.452222222,"2006",14.75
+1,"Gilthead seabream",95,0.286111111,"2006",102.25
+1,"Gilthead seabream",686,0.286111111,"2006",2555.25
+1,"Marine fishes nei",96,0.477777778,"2006",75
+1,"Marine fishes nei",687,0.477777778,"2006",3
+1,"Red drum",97,0.366666667,"2006",344.25
+1,"Red drum",688,0.366666667,"2006",30
+1,"Striped bass, hybrid",689,0.444010417,"2006",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+2,"Cupped oysters nei",684,0.888095238,"2006",0.25
+2,"European seabass",94,0.452222222,"2006",130.25
+2,"European seabass",685,0.452222222,"2006",14.75
+2,"Gilthead seabream",95,0.286111111,"2006",102.25
+2,"Gilthead seabream",686,0.286111111,"2006",2555.25
+2,"Marine fishes nei",96,0.477777778,"2006",75
+2,"Marine fishes nei",687,0.477777778,"2006",3
+2,"Red drum",97,0.366666667,"2006",344.25
+2,"Red drum",688,0.366666667,"2006",30
+2,"Striped bass, hybrid",689,0.444010417,"2006",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+3,"Cupped oysters nei",684,0.888095238,"2006",0.25
+3,"European seabass",94,0.452222222,"2006",130.25
+3,"European seabass",685,0.452222222,"2006",14.75
+3,"Gilthead seabream",95,0.286111111,"2006",102.25
+3,"Gilthead seabream",686,0.286111111,"2006",2555.25
+3,"Marine fishes nei",96,0.477777778,"2006",75
+3,"Marine fishes nei",687,0.477777778,"2006",3
+3,"Red drum",97,0.366666667,"2006",344.25
+3,"Red drum",688,0.366666667,"2006",30
+3,"Striped bass, hybrid",689,0.444010417,"2006",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+4,"Cupped oysters nei",684,0.888095238,"2006",0.25
+4,"European seabass",94,0.452222222,"2006",130.25
+4,"European seabass",685,0.452222222,"2006",14.75
+4,"Gilthead seabream",95,0.286111111,"2006",102.25
+4,"Gilthead seabream",686,0.286111111,"2006",2555.25
+4,"Marine fishes nei",96,0.477777778,"2006",75
+4,"Marine fishes nei",687,0.477777778,"2006",3
+4,"Red drum",97,0.366666667,"2006",344.25
+4,"Red drum",688,0.366666667,"2006",30
+4,"Striped bass, hybrid",689,0.444010417,"2006",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+5,"Cupped oysters nei",684,0.888095238,"2006",0.25
+5,"European seabass",94,0.452222222,"2006",130.25
+5,"European seabass",685,0.452222222,"2006",14.75
+5,"Gilthead seabream",95,0.286111111,"2006",102.25
+5,"Gilthead seabream",686,0.286111111,"2006",2555.25
+5,"Marine fishes nei",96,0.477777778,"2006",75
+5,"Marine fishes nei",687,0.477777778,"2006",3
+5,"Red drum",97,0.366666667,"2006",344.25
+5,"Red drum",688,0.366666667,"2006",30
+5,"Striped bass, hybrid",689,0.444010417,"2006",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2006",93
+6,"Cupped oysters nei",684,0.888095238,"2006",0.25
+6,"European seabass",94,0.452222222,"2006",130.25
+6,"European seabass",685,0.452222222,"2006",14.75
+6,"Gilthead seabream",95,0.286111111,"2006",102.25
+6,"Gilthead seabream",686,0.286111111,"2006",2555.25
+6,"Marine fishes nei",96,0.477777778,"2006",75
+6,"Marine fishes nei",687,0.477777778,"2006",3
+6,"Red drum",97,0.366666667,"2006",344.25
+6,"Red drum",688,0.366666667,"2006",30
+6,"Striped bass, hybrid",689,0.444010417,"2006",0
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+1,"Cupped oysters nei",684,0.888095238,"2007",0
+1,"European seabass",94,0.452222222,"2007",129.5
+1,"European seabass",685,0.452222222,"2007",13.5
+1,"Gilthead seabream",95,0.286111111,"2007",92
+1,"Gilthead seabream",686,0.286111111,"2007",1992
+1,"Marine fishes nei",96,0.477777778,"2007",93
+1,"Marine fishes nei",687,0.477777778,"2007",3
+1,"Red drum",97,0.366666667,"2007",368
+1,"Red drum",688,0.366666667,"2007",46.75
+1,"Striped bass, hybrid",689,0.444010417,"2007",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+2,"Cupped oysters nei",684,0.888095238,"2007",0
+2,"European seabass",94,0.452222222,"2007",129.5
+2,"European seabass",685,0.452222222,"2007",13.5
+2,"Gilthead seabream",95,0.286111111,"2007",92
+2,"Gilthead seabream",686,0.286111111,"2007",1992
+2,"Marine fishes nei",96,0.477777778,"2007",93
+2,"Marine fishes nei",687,0.477777778,"2007",3
+2,"Red drum",97,0.366666667,"2007",368
+2,"Red drum",688,0.366666667,"2007",46.75
+2,"Striped bass, hybrid",689,0.444010417,"2007",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+3,"Cupped oysters nei",684,0.888095238,"2007",0
+3,"European seabass",94,0.452222222,"2007",129.5
+3,"European seabass",685,0.452222222,"2007",13.5
+3,"Gilthead seabream",95,0.286111111,"2007",92
+3,"Gilthead seabream",686,0.286111111,"2007",1992
+3,"Marine fishes nei",96,0.477777778,"2007",93
+3,"Marine fishes nei",687,0.477777778,"2007",3
+3,"Red drum",97,0.366666667,"2007",368
+3,"Red drum",688,0.366666667,"2007",46.75
+3,"Striped bass, hybrid",689,0.444010417,"2007",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+4,"Cupped oysters nei",684,0.888095238,"2007",0
+4,"European seabass",94,0.452222222,"2007",129.5
+4,"European seabass",685,0.452222222,"2007",13.5
+4,"Gilthead seabream",95,0.286111111,"2007",92
+4,"Gilthead seabream",686,0.286111111,"2007",1992
+4,"Marine fishes nei",96,0.477777778,"2007",93
+4,"Marine fishes nei",687,0.477777778,"2007",3
+4,"Red drum",97,0.366666667,"2007",368
+4,"Red drum",688,0.366666667,"2007",46.75
+4,"Striped bass, hybrid",689,0.444010417,"2007",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+5,"Cupped oysters nei",684,0.888095238,"2007",0
+5,"European seabass",94,0.452222222,"2007",129.5
+5,"European seabass",685,0.452222222,"2007",13.5
+5,"Gilthead seabream",95,0.286111111,"2007",92
+5,"Gilthead seabream",686,0.286111111,"2007",1992
+5,"Marine fishes nei",96,0.477777778,"2007",93
+5,"Marine fishes nei",687,0.477777778,"2007",3
+5,"Red drum",97,0.366666667,"2007",368
+5,"Red drum",688,0.366666667,"2007",46.75
+5,"Striped bass, hybrid",689,0.444010417,"2007",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2007",88
+6,"Cupped oysters nei",684,0.888095238,"2007",0
+6,"European seabass",94,0.452222222,"2007",129.5
+6,"European seabass",685,0.452222222,"2007",13.5
+6,"Gilthead seabream",95,0.286111111,"2007",92
+6,"Gilthead seabream",686,0.286111111,"2007",1992
+6,"Marine fishes nei",96,0.477777778,"2007",93
+6,"Marine fishes nei",687,0.477777778,"2007",3
+6,"Red drum",97,0.366666667,"2007",368
+6,"Red drum",688,0.366666667,"2007",46.75
+6,"Striped bass, hybrid",689,0.444010417,"2007",0
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+1,"Cupped oysters nei",684,0.888095238,"2008",0
+1,"European seabass",94,0.452222222,"2008",149
+1,"European seabass",685,0.452222222,"2008",4.5
+1,"Gilthead seabream",95,0.286111111,"2008",109
+1,"Gilthead seabream",686,0.286111111,"2008",1606.75
+1,"Marine fishes nei",96,0.477777778,"2008",111.75
+1,"Marine fishes nei",687,0.477777778,"2008",2.75
+1,"Red drum",97,0.366666667,"2008",378
+1,"Red drum",688,0.366666667,"2008",53.75
+1,"Striped bass, hybrid",689,0.444010417,"2008",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+2,"Cupped oysters nei",684,0.888095238,"2008",0
+2,"European seabass",94,0.452222222,"2008",149
+2,"European seabass",685,0.452222222,"2008",4.5
+2,"Gilthead seabream",95,0.286111111,"2008",109
+2,"Gilthead seabream",686,0.286111111,"2008",1606.75
+2,"Marine fishes nei",96,0.477777778,"2008",111.75
+2,"Marine fishes nei",687,0.477777778,"2008",2.75
+2,"Red drum",97,0.366666667,"2008",378
+2,"Red drum",688,0.366666667,"2008",53.75
+2,"Striped bass, hybrid",689,0.444010417,"2008",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+3,"Cupped oysters nei",684,0.888095238,"2008",0
+3,"European seabass",94,0.452222222,"2008",149
+3,"European seabass",685,0.452222222,"2008",4.5
+3,"Gilthead seabream",95,0.286111111,"2008",109
+3,"Gilthead seabream",686,0.286111111,"2008",1606.75
+3,"Marine fishes nei",96,0.477777778,"2008",111.75
+3,"Marine fishes nei",687,0.477777778,"2008",2.75
+3,"Red drum",97,0.366666667,"2008",378
+3,"Red drum",688,0.366666667,"2008",53.75
+3,"Striped bass, hybrid",689,0.444010417,"2008",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+4,"Cupped oysters nei",684,0.888095238,"2008",0
+4,"European seabass",94,0.452222222,"2008",149
+4,"European seabass",685,0.452222222,"2008",4.5
+4,"Gilthead seabream",95,0.286111111,"2008",109
+4,"Gilthead seabream",686,0.286111111,"2008",1606.75
+4,"Marine fishes nei",96,0.477777778,"2008",111.75
+4,"Marine fishes nei",687,0.477777778,"2008",2.75
+4,"Red drum",97,0.366666667,"2008",378
+4,"Red drum",688,0.366666667,"2008",53.75
+4,"Striped bass, hybrid",689,0.444010417,"2008",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+5,"Cupped oysters nei",684,0.888095238,"2008",0
+5,"European seabass",94,0.452222222,"2008",149
+5,"European seabass",685,0.452222222,"2008",4.5
+5,"Gilthead seabream",95,0.286111111,"2008",109
+5,"Gilthead seabream",686,0.286111111,"2008",1606.75
+5,"Marine fishes nei",96,0.477777778,"2008",111.75
+5,"Marine fishes nei",687,0.477777778,"2008",2.75
+5,"Red drum",97,0.366666667,"2008",378
+5,"Red drum",688,0.366666667,"2008",53.75
+5,"Striped bass, hybrid",689,0.444010417,"2008",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2008",76.75
+6,"Cupped oysters nei",684,0.888095238,"2008",0
+6,"European seabass",94,0.452222222,"2008",149
+6,"European seabass",685,0.452222222,"2008",4.5
+6,"Gilthead seabream",95,0.286111111,"2008",109
+6,"Gilthead seabream",686,0.286111111,"2008",1606.75
+6,"Marine fishes nei",96,0.477777778,"2008",111.75
+6,"Marine fishes nei",687,0.477777778,"2008",2.75
+6,"Red drum",97,0.366666667,"2008",378
+6,"Red drum",688,0.366666667,"2008",53.75
+6,"Striped bass, hybrid",689,0.444010417,"2008",0
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+1,"Cupped oysters nei",684,0.888095238,"2009",0
+1,"European seabass",94,0.452222222,"2009",194
+1,"European seabass",685,0.452222222,"2009",3
+1,"Gilthead seabream",95,0.286111111,"2009",139.75
+1,"Gilthead seabream",686,0.286111111,"2009",1385
+1,"Marine fishes nei",96,0.477777778,"2009",75.75
+1,"Marine fishes nei",687,0.477777778,"2009",3.5
+1,"Red drum",97,0.366666667,"2009",389.25
+1,"Red drum",688,0.366666667,"2009",62.25
+1,"Striped bass, hybrid",689,0.444010417,"2009",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+2,"Cupped oysters nei",684,0.888095238,"2009",0
+2,"European seabass",94,0.452222222,"2009",194
+2,"European seabass",685,0.452222222,"2009",3
+2,"Gilthead seabream",95,0.286111111,"2009",139.75
+2,"Gilthead seabream",686,0.286111111,"2009",1385
+2,"Marine fishes nei",96,0.477777778,"2009",75.75
+2,"Marine fishes nei",687,0.477777778,"2009",3.5
+2,"Red drum",97,0.366666667,"2009",389.25
+2,"Red drum",688,0.366666667,"2009",62.25
+2,"Striped bass, hybrid",689,0.444010417,"2009",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+3,"Cupped oysters nei",684,0.888095238,"2009",0
+3,"European seabass",94,0.452222222,"2009",194
+3,"European seabass",685,0.452222222,"2009",3
+3,"Gilthead seabream",95,0.286111111,"2009",139.75
+3,"Gilthead seabream",686,0.286111111,"2009",1385
+3,"Marine fishes nei",96,0.477777778,"2009",75.75
+3,"Marine fishes nei",687,0.477777778,"2009",3.5
+3,"Red drum",97,0.366666667,"2009",389.25
+3,"Red drum",688,0.366666667,"2009",62.25
+3,"Striped bass, hybrid",689,0.444010417,"2009",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+4,"Cupped oysters nei",684,0.888095238,"2009",0
+4,"European seabass",94,0.452222222,"2009",194
+4,"European seabass",685,0.452222222,"2009",3
+4,"Gilthead seabream",95,0.286111111,"2009",139.75
+4,"Gilthead seabream",686,0.286111111,"2009",1385
+4,"Marine fishes nei",96,0.477777778,"2009",75.75
+4,"Marine fishes nei",687,0.477777778,"2009",3.5
+4,"Red drum",97,0.366666667,"2009",389.25
+4,"Red drum",688,0.366666667,"2009",62.25
+4,"Striped bass, hybrid",689,0.444010417,"2009",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+5,"Cupped oysters nei",684,0.888095238,"2009",0
+5,"European seabass",94,0.452222222,"2009",194
+5,"European seabass",685,0.452222222,"2009",3
+5,"Gilthead seabream",95,0.286111111,"2009",139.75
+5,"Gilthead seabream",686,0.286111111,"2009",1385
+5,"Marine fishes nei",96,0.477777778,"2009",75.75
+5,"Marine fishes nei",687,0.477777778,"2009",3.5
+5,"Red drum",97,0.366666667,"2009",389.25
+5,"Red drum",688,0.366666667,"2009",62.25
+5,"Striped bass, hybrid",689,0.444010417,"2009",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2009",69.25
+6,"Cupped oysters nei",684,0.888095238,"2009",0
+6,"European seabass",94,0.452222222,"2009",194
+6,"European seabass",685,0.452222222,"2009",3
+6,"Gilthead seabream",95,0.286111111,"2009",139.75
+6,"Gilthead seabream",686,0.286111111,"2009",1385
+6,"Marine fishes nei",96,0.477777778,"2009",75.75
+6,"Marine fishes nei",687,0.477777778,"2009",3.5
+6,"Red drum",97,0.366666667,"2009",389.25
+6,"Red drum",688,0.366666667,"2009",62.25
+6,"Striped bass, hybrid",689,0.444010417,"2009",0
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+1,"Cupped oysters nei",684,0.888095238,"2010",0
+1,"European seabass",94,0.452222222,"2010",196.666666666667
+1,"European seabass",685,0.452222222,"2010",0.333333333333333
+1,"Gilthead seabream",95,0.286111111,"2010",140
+1,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+1,"Marine fishes nei",96,0.477777778,"2010",101
+1,"Marine fishes nei",687,0.477777778,"2010",4
+1,"Red drum",97,0.366666667,"2010",390
+1,"Red drum",688,0.366666667,"2010",69.6666666666667
+1,"Striped bass, hybrid",689,0.444010417,"2010",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+2,"Cupped oysters nei",684,0.888095238,"2010",0
+2,"European seabass",94,0.452222222,"2010",196.666666666667
+2,"European seabass",685,0.452222222,"2010",0.333333333333333
+2,"Gilthead seabream",95,0.286111111,"2010",140
+2,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+2,"Marine fishes nei",96,0.477777778,"2010",101
+2,"Marine fishes nei",687,0.477777778,"2010",4
+2,"Red drum",97,0.366666667,"2010",390
+2,"Red drum",688,0.366666667,"2010",69.6666666666667
+2,"Striped bass, hybrid",689,0.444010417,"2010",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+3,"Cupped oysters nei",684,0.888095238,"2010",0
+3,"European seabass",94,0.452222222,"2010",196.666666666667
+3,"European seabass",685,0.452222222,"2010",0.333333333333333
+3,"Gilthead seabream",95,0.286111111,"2010",140
+3,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+3,"Marine fishes nei",96,0.477777778,"2010",101
+3,"Marine fishes nei",687,0.477777778,"2010",4
+3,"Red drum",97,0.366666667,"2010",390
+3,"Red drum",688,0.366666667,"2010",69.6666666666667
+3,"Striped bass, hybrid",689,0.444010417,"2010",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+4,"Cupped oysters nei",684,0.888095238,"2010",0
+4,"European seabass",94,0.452222222,"2010",196.666666666667
+4,"European seabass",685,0.452222222,"2010",0.333333333333333
+4,"Gilthead seabream",95,0.286111111,"2010",140
+4,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+4,"Marine fishes nei",96,0.477777778,"2010",101
+4,"Marine fishes nei",687,0.477777778,"2010",4
+4,"Red drum",97,0.366666667,"2010",390
+4,"Red drum",688,0.366666667,"2010",69.6666666666667
+4,"Striped bass, hybrid",689,0.444010417,"2010",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+5,"Cupped oysters nei",684,0.888095238,"2010",0
+5,"European seabass",94,0.452222222,"2010",196.666666666667
+5,"European seabass",685,0.452222222,"2010",0.333333333333333
+5,"Gilthead seabream",95,0.286111111,"2010",140
+5,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+5,"Marine fishes nei",96,0.477777778,"2010",101
+5,"Marine fishes nei",687,0.477777778,"2010",4
+5,"Red drum",97,0.366666667,"2010",390
+5,"Red drum",688,0.366666667,"2010",69.6666666666667
+5,"Striped bass, hybrid",689,0.444010417,"2010",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2010",70
+6,"Cupped oysters nei",684,0.888095238,"2010",0
+6,"European seabass",94,0.452222222,"2010",196.666666666667
+6,"European seabass",685,0.452222222,"2010",0.333333333333333
+6,"Gilthead seabream",95,0.286111111,"2010",140
+6,"Gilthead seabream",686,0.286111111,"2010",1110.66666666667
+6,"Marine fishes nei",96,0.477777778,"2010",101
+6,"Marine fishes nei",687,0.477777778,"2010",4
+6,"Red drum",97,0.366666667,"2010",390
+6,"Red drum",688,0.366666667,"2010",69.6666666666667
+6,"Striped bass, hybrid",689,0.444010417,"2010",0
+1,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+1,"Cupped oysters nei",684,0.888095238,"2011",0
+1,"European seabass",94,0.452222222,"2011",200
+1,"European seabass",685,0.452222222,"2011",0
+1,"Gilthead seabream",95,0.286111111,"2011",140
+1,"Gilthead seabream",686,0.286111111,"2011",1200
+1,"Marine fishes nei",96,0.477777778,"2011",115.5
+1,"Marine fishes nei",687,0.477777778,"2011",5
+1,"Red drum",97,0.366666667,"2011",390
+1,"Red drum",688,0.366666667,"2011",70
+1,"Striped bass, hybrid",689,0.444010417,"2011",0
+2,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+2,"Cupped oysters nei",684,0.888095238,"2011",0
+2,"European seabass",94,0.452222222,"2011",200
+2,"European seabass",685,0.452222222,"2011",0
+2,"Gilthead seabream",95,0.286111111,"2011",140
+2,"Gilthead seabream",686,0.286111111,"2011",1200
+2,"Marine fishes nei",96,0.477777778,"2011",115.5
+2,"Marine fishes nei",687,0.477777778,"2011",5
+2,"Red drum",97,0.366666667,"2011",390
+2,"Red drum",688,0.366666667,"2011",70
+2,"Striped bass, hybrid",689,0.444010417,"2011",0
+3,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+3,"Cupped oysters nei",684,0.888095238,"2011",0
+3,"European seabass",94,0.452222222,"2011",200
+3,"European seabass",685,0.452222222,"2011",0
+3,"Gilthead seabream",95,0.286111111,"2011",140
+3,"Gilthead seabream",686,0.286111111,"2011",1200
+3,"Marine fishes nei",96,0.477777778,"2011",115.5
+3,"Marine fishes nei",687,0.477777778,"2011",5
+3,"Red drum",97,0.366666667,"2011",390
+3,"Red drum",688,0.366666667,"2011",70
+3,"Striped bass, hybrid",689,0.444010417,"2011",0
+4,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+4,"Cupped oysters nei",684,0.888095238,"2011",0
+4,"European seabass",94,0.452222222,"2011",200
+4,"European seabass",685,0.452222222,"2011",0
+4,"Gilthead seabream",95,0.286111111,"2011",140
+4,"Gilthead seabream",686,0.286111111,"2011",1200
+4,"Marine fishes nei",96,0.477777778,"2011",115.5
+4,"Marine fishes nei",687,0.477777778,"2011",5
+4,"Red drum",97,0.366666667,"2011",390
+4,"Red drum",688,0.366666667,"2011",70
+4,"Striped bass, hybrid",689,0.444010417,"2011",0
+5,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+5,"Cupped oysters nei",684,0.888095238,"2011",0
+5,"European seabass",94,0.452222222,"2011",200
+5,"European seabass",685,0.452222222,"2011",0
+5,"Gilthead seabream",95,0.286111111,"2011",140
+5,"Gilthead seabream",686,0.286111111,"2011",1200
+5,"Marine fishes nei",96,0.477777778,"2011",115.5
+5,"Marine fishes nei",687,0.477777778,"2011",5
+5,"Red drum",97,0.366666667,"2011",390
+5,"Red drum",688,0.366666667,"2011",70
+5,"Striped bass, hybrid",689,0.444010417,"2011",0
+6,"Barramundi(=Giant seaperch)",93,0.444010417,"2011",70
+6,"Cupped oysters nei",684,0.888095238,"2011",0
+6,"European seabass",94,0.452222222,"2011",200
+6,"European seabass",685,0.452222222,"2011",0
+6,"Gilthead seabream",95,0.286111111,"2011",140
+6,"Gilthead seabream",686,0.286111111,"2011",1200
+6,"Marine fishes nei",96,0.477777778,"2011",115.5
+6,"Marine fishes nei",687,0.477777778,"2011",5
+6,"Red drum",97,0.366666667,"2011",390
+6,"Red drum",688,0.366666667,"2011",70
+6,"Striped bass, hybrid",689,0.444010417,"2011",0
