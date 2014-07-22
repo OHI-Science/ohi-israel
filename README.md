@@ -7,7 +7,7 @@ https://github.com/bbest/ohi-israel
 
 As long as the ohicore library is installed (see [Install](http://ohi-science.org/pages/install.html)), 2x-clicking on the appropriate launchApp (.bat for Windows, .command for Mac) should open the toolbox with Israel layers loaded to look like this:
 
-![image](https://cloud.githubusercontent.com/assets/2837257/3241407/b243a7a4-f13c-11e3-9e0b-62a0a185d827.png)
+![ohi-israel_tbx_screen](tmp/fig/ohi-israel_tbx_screen.png)
 
 ## Regions
 The 4 regions and ancillary buffers (eg offshore3nm, inland1km) were created at: 
