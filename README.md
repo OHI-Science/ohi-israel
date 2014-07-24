@@ -1,6 +1,14 @@
 ohi-israel: Israel's Ocean Health Index
 ==========
 
+## OHI Toolbox App with Israel Scenario
+
+The OHI toolbox loaded with the Israel scenario layers initially looks like this in your web browser when launched:
+
+![ohi-israel_tbx_screen](med2014/tmp/fig/ohi-israel_tbx_screen.png)
+
+## Install
+
 To get the latest Ocean Health Index toolbox `ohicore` and Israel scenario files `ohi-israel` into your home folder `~/github` and launch the application, run the following in R:
 
 ```r
@@ -53,11 +61,9 @@ write_shortcuts(scenario)
 launch_app(scenario)
 ```
 
-After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/github/ohi-israel/med2014' folder to open the toolbox with Israel layers loaded to look like this:
+After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/github/ohi-israel/med2014' folder to open in future.
 
-![ohi-israel_tbx_screen](med2014/tmp/fig/ohi-israel_tbx_screen.png)
-
-You can use `git pull` from within the repositories `~/github/ohicore` and `~/github/ohi-israel` to get the latest. See [Setup](https://github.com/OHI-Science/ohiprep/wiki/Setup) for installation of git, Github and RStudio.
+You can use `git pull` from within the repositories `~/github/ohicore` and `~/github/ohi-israel` to get the latest. See [Setup](https://github.com/OHI-Science/ohiprep/wiki/Setup) for installation of git, Github and RStudio. If you wish to modify the ohi-israel files, you can provide your Github username (easy to [signup](http://github.com)) to bbest@nceas.ucsb.edu for write access or [fork the repository](https://help.github.com/articles/fork-a-repo) to your own account space.
 
 ## Regions
 The 6 regions and ancillary buffers (offshore, offshore1km, offshore3nm, inland, inland1km, inland25km) were created at: 
