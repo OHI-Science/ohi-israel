@@ -53,18 +53,16 @@ write_shortcuts(scenario)
 launch_app(scenario)
 ```
 
-The scenario files can be found here:
-
-https://github.com/bbest/ohi-israel
-
-As long as the ohicore library is installed (see [Install](http://ohi-science.org/pages/install.html)), 2x-clicking on the appropriate launchApp (.bat for Windows, .command for Mac) should open the toolbox with Israel layers loaded to look like this:
+Then you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/github/ohi-israel/med2014' folder to open the toolbox with Israel layers loaded to look like this:
 
 ![ohi-israel_tbx_screen](med2014/tmp/fig/ohi-israel_tbx_screen.png)
 
 ## Regions
-The 4 regions and ancillary buffers (eg offshore3nm, inland1km) were created at: 
+The 6 regions and ancillary buffers (offshore, offshore1km, offshore3nm, inland, inland1km, inland25km) were created at: 
 
-https://github.com/ohi-science/ohiprep/tree/master/Israel/Hamaarag-Regions_v2014a
+  https://github.com/OHI-Science/ohiprep/tree/master/Israel/Hamaarag-Regions_v2014a
+
+![map](https://raw.githubusercontent.com/OHI-Science/ohiprep/master/Israel/Hamaarag-Regions_v2014a/fig/ISR-regions_v2-gadm.png)
 
 ## Layers
 So far, this is just a straight copy of the OHI Global2013 layers extracting just for Israel and replicating per region (n=4). So there's no differentiation yet between regions since they all have the same value.
