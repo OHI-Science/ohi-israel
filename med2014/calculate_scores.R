@@ -1,5 +1,5 @@
 # presume that working directory in current scenario directory, eg:
-# setwd('~/github/.')
+# setwd('~/ohi-israel/med2014')
 
 # load conf
 conf = Conf('conf')
