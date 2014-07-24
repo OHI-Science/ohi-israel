@@ -21,7 +21,6 @@ for (p in c('devtools')){
 }
  
 # install github packages
-library(devtools)
 install_github('ropensci/git2r')
 install_github('ohi-science/rCharts')
 
@@ -31,18 +30,18 @@ library(git2r)
 for (p in c('ohicore','ohi-israel')){
 
   # paths
-  dir = sprintf('~/github/%s', p)
+  dir = normalizePath(sprintf('~/github/%s', p))
   url = sprintf('https://github.com/ohi-science/%s', p)
   
   # delete existing
-  if (exists(dir)) unlink(dir, recursive=T, force=T)
+  if (file.exists(dir)) unlink(dir, recursive=T, force=T)
   
   # clone
   dir.create(dir, recursive=T)
-  clone(url, dir)
+  repo = clone(url, dir)
 }
 
-# install ohicore from local github cloned repo
+# install ohicore into default R library path from local github cloned repo
 install('~/github/ohicore')
 
 # write launch_app shortcuts specific to R install path and operating system (OS)
