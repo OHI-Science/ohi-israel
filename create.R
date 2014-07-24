@@ -5,27 +5,30 @@
 #  1. install ohicore: http://ohi-science.org/pages/install.html
 #  1. clone of https://github.com/ohi-science/ohibaltic in ../ohicore
 
+setwd('~/github/ohi-israel/med2014')
+
 # get paths based on host machine
 dirs = list(
   neptune_data  = '/Volumes/data_edit', 
   neptune_local = '/Volumes/local_edit',
-  ohiprep       = '../ohiprep',
-  ohicore       = '../ohicore')
+  ohiprep       = '../../ohiprep',
+  ohicore       = '../../ohicore')
 
 # load ohicore, development mode
 library(devtools)
 load_all(dirs$ohicore)
 
 # other vars
-f_spatial    = '../ohiprep/Israel/Hamaarag-Regions_v2014a/data/regions_gcs.js'
-dir_conf_in  = '../ohi-global/eez2013/conf'
-dir_lyrs_in  = '../ohi-global/eez2013/layers'
+f_spatial    = '../../ohiprep/Israel/Hamaarag-Regions_v2014a/data/regions_gcs.js'
+dir_conf_in  = '../../ohi-global/eez2013/conf'
+dir_lyrs_in  = '../../ohi-global/eez2013/layers'
+
 
 # create dirs
 for (dir in c('tmp','layers','conf','spatial')) dir.create(dir, showWarnings=F)
 
 # load layers from 2013
-lyrs = read.csv('../ohi-global/eez2013/layers.csv')
+lyrs = read.csv('../../ohi-global/eez2013/layers.csv')
 write.csv(lyrs, 'tmp/layers_eez2013.csv', na='', row.names=F)
 
 # modify
@@ -168,7 +171,7 @@ for (f in f_spatial){ # f = f_spatial[1]
 }
  
 # save shortcut files not specific to operating system
-write_shortcuts('.', os_files=1)
+write_shortcuts('.', os_files=0)
 
 # launch on Mac
 system('open launch_app.command')
