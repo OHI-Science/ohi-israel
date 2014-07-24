@@ -1,7 +1,7 @@
 ohi-israel: Israel's Ocean Health Index
 ==========
 
-To get the latest Ocean Health Index toolbox and Israel scenario files, run the following in R:
+To get the latest Ocean Health Index toolbox `ohicore` and Israel scenario files `ohi-israel` into your home folder `~/github`, run the following in R:
 
 ```r
 # remove old packages
