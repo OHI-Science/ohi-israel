@@ -52,7 +52,7 @@ for (p in c('ohicore','ohi-israel')){
 # install ohicore into default R library path from local github cloned repo
 install('~/github/ohicore')
 
-# write launch_app shortcuts specific to R install path and operating system (OS)
+# write launch_app shortcuts specific to R path of operating system
 scenario = '~/github/ohi-israel/med2014'
 load_all('~/github/ohicore')
 write_shortcuts(scenario)
