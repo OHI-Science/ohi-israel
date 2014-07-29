@@ -34,7 +34,8 @@ install_github('ohi-science/ohicore')
 
 # define destination of ohi-israel scenario
 scenario = '~/ohi-israel/med2014'
-cat(sprintf('Writing https://github.com/ohi-science/ohi-israel to:\n  %s\n', suppressWarnings(normalizePath(dirname(scenario)))))
+cat(sprintf('Writing https://github.com/ohi-science/ohi-israel to:\n  %s\n', 
+  suppressWarnings(normalizePath(dirname(scenario)))))
     
 # get scenario
 library(ohicore)
@@ -42,7 +43,8 @@ get_scenarios('ohi-science/ohi-israel', dirname(scenario))
 
 # write launch_app shortcuts specific to R path of operating system
 write_shortcuts(scenario)
-cat(sprintf('In future, you can launch app to scenario with:\n  %s\n', suppressWarnings(normalizePath(file.path(scenario, 'launch_app.*')))))
+cat(sprintf('In future, you can launch app to scenario with:\n  %s\n', 
+  suppressWarnings(normalizePath(file.path(scenario, 'launch_app.*')))))
 
 # launch app (can use launch_app.* from inside scenario folder to launch in future)
 launch_app(scenario)
