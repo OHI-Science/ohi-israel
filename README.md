@@ -19,7 +19,7 @@ for (p in c('ohicore','ohigui','rCharts')){
     remove.packages(p, lib)  
   }
 }
- 
+
 # install dependencies
 for (p in c('devtools')){
   if (!require(p, character.only=T)){
@@ -27,35 +27,22 @@ for (p in c('devtools')){
     require(p, character.only=T)
   }
 }
- 
+
 # install github packages
-install_github('ropensci/git2r')
 install_github('ohi-science/rCharts')
+install_github('ohi-science/ohicore')
 
-# clone packages in development from github
-# (after install, can use git pull to get latest, even from RStudio)
-library(git2r)
-for (p in c('ohicore','ohi-israel')){
-
-  # paths
-  dir = normalizePath(sprintf('~/github/%s', p))
-  url = sprintf('https://github.com/ohi-science/%s', p)
-  
-  # delete existing
-  if (file.exists(dir)) unlink(dir, recursive=T, force=T)
-  
-  # clone
-  dir.create(dir, recursive=T)
-  repo = clone(url, dir)
-}
-
-# install ohicore into default R library path from local github cloned repo
-install('~/github/ohicore')
+# define destination of ohi-israel scenario
+scenario = '~/ohi-israel/med2014'
+cat(sprintf('Writing https://github.com/ohi-science/ohi-israel to:\n  %s\n', suppressWarnings(normalizePath(dirname(scenario)))))
+    
+# get scenario
+library(ohicore)
+get_scenarios('ohi-science/ohi-israel', dirname(scenario))
 
 # write launch_app shortcuts specific to R path of operating system
-scenario = '~/github/ohi-israel/med2014'
-load_all('~/github/ohicore')
 write_shortcuts(scenario)
+cat(sprintf('In future, you can launch app to scenario with:\n  %s\n', suppressWarnings(normalizePath(file.path(scenario, 'launch_app.*')))))
 
 # launch app (can use launch_app.* from inside scenario folder to launch in future)
 launch_app(scenario)
