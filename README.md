@@ -48,9 +48,9 @@ cat(sprintf('In future, you can launch app to scenario with:\n  %s\n', suppressW
 launch_app(scenario)
 ```
 
-After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/github/ohi-israel/med2014' folder to open in future.
+After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/ohi-israel/med2014' folder to open in future.
 
-You can use `git pull` from within the repositories `~/github/ohicore` and `~/github/ohi-israel` to get the latest. See [Setup](https://github.com/OHI-Science/ohiprep/wiki/Setup) for installation of git, Github and RStudio. If you wish to modify the ohi-israel files, you can provide your Github username (easy to [signup](http://github.com)) to bbest@nceas.ucsb.edu for write access or [fork the repository](https://help.github.com/articles/fork-a-repo) to your own account space.
+As an alternative to `get_scenarios` in the install script above, you can [fork and clone](https://help.github.com/articles/fork-a-repo) this repository. (I recommend cloning to `~/github/ohi-israel` on your local machine). This would allow you to commit changes to your local version, push commits up to github for offsite archiving, and eventually make a pull request to have those changes merged back to ohi-science/ohi-israel. See [Setup](https://github.com/OHI-Science/ohiprep/wiki/Setup) for installation of git, Github and RStudio. If you wish to modify the ohi-science/ohi-israel files directly (so no need to fork or send pull requests; simply clone from ohi-science/ohi-israel and push/pull from there), you can alternatively provide your Github username (easy to [signup](http://github.com)) to bbest@nceas.ucsb.edu for write access.
 
 ## Regions
 The 6 regions and ancillary buffers (offshore, offshore1km, offshore3nm, inland, inland1km, inland25km) were created at: 
