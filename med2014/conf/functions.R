@@ -10,34 +10,6 @@ Setup = function(){
       require(p, character.only=T)
     }
   }
-  
-  # csv comparison function, made global
-  csv_compare <<- function(o, step, prefix=sprintf('temp/%s_MAR', basename(getwd()))){
-    
-    dir_temp = basename(dirname(prefix))
-    if (!file.exists(dir_temp)) dir.create(dir_temp, recursive=T)
-    
-    csv = sprintf('%s_%s_B.csv', prefix, step)
-    if (!file.exists(csv)){
-      cat(sprintf('DEBUG: writing %s.\n', csv))
-      write.csv(o, csv, row.names=F, na='')     
-    }
-    x = read.csv(csv, check.names=F)
-    
-    # custom modifications
-    if (step=='3-m-melt'){ x$year = factor(x$year, levels=levels(o$year)) } # [1] "Component “year”: 'current' is not a factor"
-    if (step=='7-ref95pct-quantile'){ x = setNames(as.numeric(x), '95%') }
-    
-    eq = all.equal(o, x)
-    if (class(eq) == 'character'){
-      csv = sprintf('%s_%s_A.csv', prefix, step)
-      cat(sprintf('DEBUG: NOT EQUAL! writing %s.\n', csv))
-      print(eq)
-      write.csv(o, csv, row.names=F, na='') 
-    }
-    return(x)
-  }
-  
 }
 
 FIS = function(layers, status_year=2011){
@@ -271,31 +243,21 @@ MAR = function(layers, status_years=2005:2011){
   rownames(rky_smooth) = as.character(yrs_smooth)
   rky_smooth = t(rky_smooth)
   rky = as.data.frame(cbind(rky[, c('rgn_id','species','species_code','sust_coeff')], rky_smooth)); head(rky)
-  x = csv_compare(rky, '2-rky-smooth')  # DEBUG
     
   # melt
   m = melt(rky,
            id=c('rgn_id', 'species', 'species_code', 'sust_coeff'),
            variable.name='year', value.name='sm_tonnes'); head(m)
-  x = csv_compare(m, '3-m-melt')  # DEBUG
-  # "Component “year”: 'current' is not a factor"
     
   # for each species-country-year, smooth mariculture harvest times the sustainability coefficient
   m = within(m, {
     sust_tonnes = sust_coeff * sm_tonnes
     year        = as.numeric(as.character(m$year))
   })
-  x = csv_compare(m, '4-m-within')  # DEBUG
   
   # merge the MAR and coastal human population data
   m = merge(m, popn_inland25mi, by=c('rgn_id','year'), all.x=T)
-  m_a = csv_compare(m, '5-m-merge')  # DEBUG
-  
-  # must first aggregate all weighted timeseries per region, before dividing by total population
-#   ry = ddply(m, .(rgn_id, year, popsum), summarize, 
-#              sust_tonnes_sum = sum(sust_tonnes),
-#              mar_pop         = sum(sust_tonnes) / popsum[1]) # <-- PROBLEM using popsum[1] with ddply!!!
-  
+    
   # aggregate all weighted timeseries per region, and divide by coastal human population
   ry = m %>%
     group_by(rgn_id, year) %>%
@@ -313,7 +275,6 @@ MAR = function(layers, status_years=2005:2011){
   
   # get reference quantile based on argument years
   ref_95pct = quantile(subset(ry, year <= max(status_years), mar_pop, drop=T), 0.95, na.rm=T)
-  x = csv_compare(ref_95pct, '7-ref95pct-quantile')  # DEBUG
   
   ry = within(ry, {
     status = ifelse(mar_pop / ref_95pct > 1, 
@@ -321,11 +282,6 @@ MAR = function(layers, status_years=2005:2011){
                     mar_pop / ref_95pct)})
   status <- subset(ry, year == max(status_years), c('rgn_id', 'status'))
   status$status <- round(status$status*100, 2)  
-  x = csv_compare(ry, '8-ry-within')  # DEBUG  
-  
-  # get list where trend is only to be calculated up to second-to-last-year
-  # species where the last year of the time-series was 2010, and the same value was copied over to 2011
-  # i.e. it was gapfilled using the previous year
   
   # get MAR trend
   ry = merge(ry, trend_years, all.x=T)
@@ -352,7 +308,6 @@ MAR = function(layers, status_years=2005:2011){
     mutate(goal='MAR')
   
   return(scores)
-  # NOTE: some differences to www2013 are due to 4_yr species only previously getting trend calculated to 4 years (instead of 5)
 }
 
 FP = function(layers, scores){
@@ -455,7 +410,7 @@ AO = function(layers,
   ry = ddply(rky, .(year), summarize, status = mean(weight)); head(ry)
   
   # Hila - duplicate national status for all regions
-  ry = data.frame(region_id=rep(1:6,times=1,each=nrow(ry)),ry[rep(seq_len(nrow(ry)), 6), ]); summary(r.status); dim(r.status)
+  ry = data.frame(region_id=rep(1:6,times=1,each=nrow(ry)),ry[rep(seq_len(nrow(ry)), 6), ]); summary(ry); dim(ry)
   
   # status
   r.status = subset(ry, year==year_max, c(region_id,status)); summary(r.status); dim(r.status)
