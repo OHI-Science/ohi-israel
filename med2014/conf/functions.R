@@ -391,55 +391,108 @@ FP = function(layers, scores){
 }
 
 
-AO = function(layers, 
+# Hila, 8.6.14 - Change the model to calculate status according to stocks for each species relative to max stock landings (see documentation)
+# Hila, 6.8.14 - Calculate status for Israel and duplicate score for regions, because no data is available at region level
+AO = function(layers,
               year_max=max(layers_data$year, na.rm=T), 
-              year_min=max(min(layers_data$year, na.rm=T), max(layers_data$year, na.rm=T)-10), 
-              Sustainability=1.0){
+              year_min=max(min(layers_data$year, na.rm=T), max(layers_data$year, na.rm=T)-10)){
   
   # cast data
   layers_data = SelectLayersData(layers, targets='AO')
   
-  ry = rename(dcast(layers_data, id_num + year ~ layer, value.var='val_num', 
-                    subset = .(layer %in% c('ao_need'))),
-              c('id_num'='region_id', 'ao_need'='need')); head(ry); summary(ry)
+  rky = rename(dcast(layers_data, category + year ~ layer, value.var='val_num', 
+                     subset = .(layer %in% c('rky_ao_stock'))),
+               c('category'='sciname', 'rky_ao_stock'='stock')); head(rky); summary(rky)
   
-  r = na.omit(rename(dcast(layers_data, id_num ~ layer, value.var='val_num', 
-                           subset = .(layer %in% c('ao_access'))),
-                     c('id_num'='region_id', 'ao_access'='access'))); head(r); summary(r)
+  n=5 # use only the last n years to calculate trend
   
-  ry = merge(ry, r); head(r); summary(r); dim(r)
-  
-  # model
-  ry = within(ry,{
-    Du = (1.0 - need) * (1.0 - access)
-    status = ((1.0 - Du) * Sustainability) * 100
+  # calcultae max stock rates and recent trend for each year (using only years >= year_min)
+  rky2 = ddply(rky, .(sciname), function(x){
+    data.frame(max_stock = max(x$stock),max_yr = max(x$year[which.max(x$stock)]),
+               apply(embed(as.matrix(x[c('year','stock')]),n), 1, function(x){  
+                 
+                 # lm for stock rate ~ years
+                 year = x[!(1:(n*2) %% 2) == 0]
+                 stock = x[(1:(n*2) %% 2) == 0]
+                 
+                 data.frame(recent_trend = lm(stock ~  year)$coefficients[['year']],
+                            year = year[1])
+               }))
   })
   
+  # reshape data frame from wide (year.1, year.2... ect) to long format (with 1 year, trend column)
+  rky2 = reshape(rky2,varying=list(names(rky2)[grep('year',names(rky2))],names(rky2)[grep('recent_trend',names(rky2))]),
+                 v.names=c("year","recent_trend"),direction="long")
+  
+  rky = merge(rky,rky2,all.x=T,by=c('sciname','year'))
+  
+  # Set status according to FAO weight from Sea Around Us project (see documentation)
+  rky3 = ddply(subset(rky, year >= year_min), .(sciname, year), function(x){
+    if (x$year < x$max_yr) # Stock landings have not reached a peak or peak occurs in the last year of the times series
+    {
+      # Exploitation Category = Developing (w=1)
+      w=1
+    }
+    else
+    {
+      if (x$stock/x$max_stock > 0.5) # Stock landings are between 50-100% of peak
+      {
+        # Exploitation Category = Fully exploited (w=1)
+        w=1
+      }
+      
+      if (x$stock/x$max_stock < 0.1) # Stock landings are < 10% of peak 
+      {
+        # Exploitation Category = Collapsed (w=0)
+        w=0
+      }
+      
+      if (x$stock/x$max_stock > 0.1 & x$stock/x$max_stock < 0.5) # Stock landings are between 10-50% of peak
+      {
+        if (x$recent_trend >= 0)
+        {
+          # Exploitation Category = Overexploited (w=0.5)
+          w=0.5
+        }
+        
+        if (x$recent_trend < 0)
+        {
+          # Exploitation Category = Rebuilding (w=0.25)
+          w=0.25
+        }
+      }
+      
+    }
+    data.frame (weight = w)
+  })
+  
+  rky = merge(rky,rky3,by=c('sciname','year'))
+  
+  # yearly status is set as mean weight across species, per year
+  ry = ddply(rky, .(year), summarize, status = mean(weight)); head(ry)
+  
+  # Hila - duplicate national status for all regions
+  ry = data.frame(region_id=rep(1:6,times=1,each=nrow(ry)),ry[rep(seq_len(nrow(ry)), 6), ]); summary(r.status); dim(r.status)
+  
   # status
-  r.status = subset(ry, year==year_max, c(region_id, status)); summary(r.status); dim(r.status)
+  r.status = subset(ry, year==year_max, c(region_id,status)); summary(r.status); dim(r.status)
   
   # trend
-  r.trend = ddply(subset(ry, year >= year_min), .(region_id), function(x)
+  r.trend = ddply(ry, .(region_id), function(x){
+    data.frame(trend = if(length(na.omit(x$status))>1) 
     {
-      if (length(na.omit(x$status))>1) {
-        # use only last valid 5 years worth of status data since year_min
-        d = data.frame(status=x$status, year=x$year)[tail(which(!is.na(x$status)), 5),]
-        trend = coef(lm(status ~ year, d))[['year']] / 100
-      } else {
-        trend = NA
-      }
-      return(data.frame(trend=trend))
-    })
+      d = data.frame(status=x$status, year=x$year)[tail(which(!is.na(x$status)), 5),]
+      lm(status ~ year, d)$coefficients[['year']]
+      
+    } else {
+      NA
+    }
+  )})
   
   # return scores
-  scores = r.status %.%
-    select(region_id, score=status) %.%
-    mutate(dimension='status') %.%
-    rbind(
-      r.trend %.%
-        select(region_id, score=trend) %.%
-        mutate(dimension='trend')) %.%
-    mutate(goal='AO') # dlply(scores, .(dimension), summary)
+  s.status = cbind(rename(r.status, c('status'='score')), data.frame('dimension'='status')); head(s.status)
+  s.trend  = cbind(rename(r.trend , c('trend' ='score')), data.frame('dimension'='trend')); head(s.trend)
+  scores = cbind(rbind(s.status, s.trend), data.frame('goal'='AO')); #dlply(scores, .(dimension), summary)
   return(scores)  
 }
 

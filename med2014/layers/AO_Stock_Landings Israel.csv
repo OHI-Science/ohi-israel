@@ -1,0 +1,916 @@
+year,sciname,value
+1950,Argyrosomus regius,68.464
+1951,Argyrosomus regius,76.294
+1952,Argyrosomus regius,92.701
+1953,Argyrosomus regius,79.678
+1954,Argyrosomus regius,138.224
+1955,Argyrosomus regius,243.378
+1956,Argyrosomus regius,70.039
+1957,Argyrosomus regius,61.171
+1958,Argyrosomus regius,108.583
+1959,Argyrosomus regius,204.226
+1960,Argyrosomus regius,96.569
+1961,Argyrosomus regius,105.804
+1962,Argyrosomus regius,125.2
+1963,Argyrosomus regius,74.6
+1964,Argyrosomus regius,77.8
+1965,Argyrosomus regius,74.2
+1966,Argyrosomus regius,43.9
+1967,Argyrosomus regius,83.5
+1968,Argyrosomus regius,46.7
+1969,Argyrosomus regius,34
+1970,Argyrosomus regius,29.6
+1971,Argyrosomus regius,31.9
+1972,Argyrosomus regius,37.5
+1973,Argyrosomus regius,17.2
+1974,Argyrosomus regius,12.5
+1975,Argyrosomus regius,4.2
+1976,Argyrosomus regius,0.8
+1977,Argyrosomus regius,4
+1978,Argyrosomus regius,8.6
+1979,Argyrosomus regius,11
+1980,Argyrosomus regius,10
+1981,Argyrosomus regius,12
+1982,Argyrosomus regius,25
+1983,Argyrosomus regius,40
+1984,Argyrosomus regius,30
+1985,Argyrosomus regius,85
+1986,Argyrosomus regius,60
+1987,Argyrosomus regius,70
+1988,Argyrosomus regius,70
+1989,Argyrosomus regius,64.01
+1990,Argyrosomus regius,66.44322
+1991,Argyrosomus regius,52.97818
+1992,Argyrosomus regius,27.385
+1993,Argyrosomus regius,12.16
+1994,Argyrosomus regius,9.3648
+1995,Argyrosomus regius,13.7152
+1996,Argyrosomus regius,12.432
+1997,Argyrosomus regius,16
+1998,Argyrosomus regius,2.3
+1999,Argyrosomus regius,9
+2000,Argyrosomus regius,0
+2001,Argyrosomus regius,0
+2002,Argyrosomus regius,0
+2003,Argyrosomus regius,0
+2004,Argyrosomus regius,0
+2005,Argyrosomus regius,6.1
+2006,Argyrosomus regius,2
+2007,Argyrosomus regius,22
+2008,Argyrosomus regius,7.28
+2009,Argyrosomus regius,3.021
+2010,Argyrosomus regius,2.1
+1950,Boops boops,4.919
+1951,Boops boops,13.721
+1952,Boops boops,14.753
+1953,Boops boops,4.862
+1954,Boops boops,2.977
+1955,Boops boops,16.855
+1956,Boops boops,9.612
+1957,Boops boops,22.271
+1958,Boops boops,21.27
+1959,Boops boops,14.227
+1960,Boops boops,33.652
+1961,Boops boops,14.13
+1962,Boops boops,22.5
+1963,Boops boops,10.2
+1964,Boops boops,19.7
+1965,Boops boops,13.2
+1966,Boops boops,12.1
+1967,Boops boops,12.2
+1968,Boops boops,9.9
+1969,Boops boops,7.5
+1970,Boops boops,21.4
+1971,Boops boops,42.2
+1972,Boops boops,61.2
+1973,Boops boops,69.5
+1974,Boops boops,77.4
+1975,Boops boops,119.9
+1976,Boops boops,123.5
+1977,Boops boops,81.4
+1978,Boops boops,78.5
+1979,Boops boops,110
+1980,Boops boops,102.5
+1981,Boops boops,148
+1982,Boops boops,142
+1983,Boops boops,110
+1984,Boops boops,208
+1985,Boops boops,240
+1986,Boops boops,180
+1987,Boops boops,180
+1988,Boops boops,210
+1989,Boops boops,194.698
+1990,Boops boops,198.85327
+1991,Boops boops,160.03113
+1992,Boops boops,76.678
+1993,Boops boops,25.84
+1994,Boops boops,19.9002
+1995,Boops boops,29.1448
+1996,Boops boops,26.418
+1997,Boops boops,33.8
+1998,Boops boops,46.9
+1999,Boops boops,73
+2000,Boops boops,91
+2001,Boops boops,37.4
+2002,Boops boops,38.1
+2003,Boops boops,67.8
+2004,Boops boops,51
+2005,Boops boops,119.5
+2006,Boops boops,123.4
+2007,Boops boops,112
+2008,Boops boops,92.53
+2009,Boops boops,85.259
+2010,Boops boops,49.48137808
+1950,Epinephelus spp,60.866
+1951,Epinephelus spp,110.286
+1952,Epinephelus spp,105.368
+1953,Epinephelus spp,100.853
+1954,Epinephelus spp,122.922
+1955,Epinephelus spp,134.174
+1956,Epinephelus spp,107.955
+1957,Epinephelus spp,118.448
+1958,Epinephelus spp,146.827
+1959,Epinephelus spp,157.267
+1960,Epinephelus spp,135.703
+1961,Epinephelus spp,130.898
+1962,Epinephelus spp,154.3
+1963,Epinephelus spp,142.4
+1964,Epinephelus spp,133.7
+1965,Epinephelus spp,142.9
+1966,Epinephelus spp,177.6
+1967,Epinephelus spp,171.5
+1968,Epinephelus spp,208.6
+1969,Epinephelus spp,189.6
+1970,Epinephelus spp,155.9
+1971,Epinephelus spp,281.9
+1972,Epinephelus spp,189.4
+1973,Epinephelus spp,213.9
+1974,Epinephelus spp,229.6
+1975,Epinephelus spp,233
+1976,Epinephelus spp,258.8
+1977,Epinephelus spp,227.2
+1978,Epinephelus spp,240.9
+1979,Epinephelus spp,199
+1980,Epinephelus spp,297.5
+1981,Epinephelus spp,293
+1982,Epinephelus spp,306
+1983,Epinephelus spp,328
+1984,Epinephelus spp,330
+1985,Epinephelus spp,369
+1986,Epinephelus spp,289.496
+1987,Epinephelus spp,495
+1988,Epinephelus spp,450
+1989,Epinephelus spp,383.86
+1990,Epinephelus spp,432.069025
+1991,Epinephelus spp,329.216475
+1992,Epinephelus spp,255.11042
+1993,Epinephelus spp,295.099328
+1994,Epinephelus spp,235.0105
+1995,Epinephelus spp,334.254
+1996,Epinephelus spp,317.093
+1997,Epinephelus spp,383.9
+1998,Epinephelus spp,393.9
+1999,Epinephelus spp,381
+2000,Epinephelus spp,263
+2001,Epinephelus spp,188.1
+2002,Epinephelus spp,225.8
+2003,Epinephelus spp,117.6
+2004,Epinephelus spp,83.3
+2005,Epinephelus spp,161.4
+2006,Epinephelus spp,76
+2007,Epinephelus spp,85
+2008,Epinephelus spp,62.13
+2009,Epinephelus spp,42.2
+2010,Epinephelus spp,45.3
+1950,Euthynnus alletteratus,12.534
+1951,Euthynnus alletteratus,20.38
+1952,Euthynnus alletteratus,9.888
+1953,Euthynnus alletteratus,76.51829138
+1954,Euthynnus alletteratus,77.08584131
+1955,Euthynnus alletteratus,77.65339124
+1956,Euthynnus alletteratus,78.22094116
+1957,Euthynnus alletteratus,78.78849109
+1958,Euthynnus alletteratus,79.35604102
+1959,Euthynnus alletteratus,79.92359094
+1960,Euthynnus alletteratus,80.49114087
+1961,Euthynnus alletteratus,81.0586908
+1962,Euthynnus alletteratus,81.62624072
+1963,Euthynnus alletteratus,82.19379065
+1964,Euthynnus alletteratus,82.76134058
+1965,Euthynnus alletteratus,83.3288905
+1966,Euthynnus alletteratus,83.89644043
+1967,Euthynnus alletteratus,84.46399036
+1968,Euthynnus alletteratus,85.03154028
+1969,Euthynnus alletteratus,85.59909021
+1970,Euthynnus alletteratus,86.16664014
+1971,Euthynnus alletteratus,86.73419006
+1972,Euthynnus alletteratus,87.30173999
+1973,Euthynnus alletteratus,87.86928992
+1974,Euthynnus alletteratus,88.43683984
+1975,Euthynnus alletteratus,89.00438977
+1976,Euthynnus alletteratus,89.5719397
+1977,Euthynnus alletteratus,90.13948962
+1978,Euthynnus alletteratus,90.70703955
+1979,Euthynnus alletteratus,90.70703955
+1980,Euthynnus alletteratus,184.4
+1981,Euthynnus alletteratus,105
+1982,Euthynnus alletteratus,110
+1983,Euthynnus alletteratus,80
+1984,Euthynnus alletteratus,60
+1985,Euthynnus alletteratus,295
+1986,Euthynnus alletteratus,232.46
+1987,Euthynnus alletteratus,175
+1988,Euthynnus alletteratus,135
+1989,Euthynnus alletteratus,113.157
+1990,Euthynnus alletteratus,129.978
+1991,Euthynnus alletteratus,97.9425
+1992,Euthynnus alletteratus,73.9395
+1993,Euthynnus alletteratus,78.28
+1994,Euthynnus alletteratus,60.2859
+1995,Euthynnus alletteratus,88.2916
+1996,Euthynnus alletteratus,80.031
+1997,Euthynnus alletteratus,103.4
+1998,Euthynnus alletteratus,73.4
+1999,Euthynnus alletteratus,90
+2000,Euthynnus alletteratus,113
+2001,Euthynnus alletteratus,70.1
+2002,Euthynnus alletteratus,40.3
+2003,Euthynnus alletteratus,76.4
+2004,Euthynnus alletteratus,76.2
+2005,Euthynnus alletteratus,88.8
+2006,Euthynnus alletteratus,112
+2007,Euthynnus alletteratus,131
+2008,Euthynnus alletteratus,92.79982242
+2009,Euthynnus alletteratus,76.7
+2010,Euthynnus alletteratus,51.49928967
+1950,Merluccius merluccius,198.791
+1951,Merluccius merluccius,99.941
+1952,Merluccius merluccius,91.229
+1953,Merluccius merluccius,194.777
+1954,Merluccius merluccius,173.717
+1955,Merluccius merluccius,265.513
+1956,Merluccius merluccius,63.146
+1957,Merluccius merluccius,198.467
+1958,Merluccius merluccius,178.57
+1959,Merluccius merluccius,222.565
+1960,Merluccius merluccius,93.798
+1961,Merluccius merluccius,55.939
+1962,Merluccius merluccius,71.6
+1963,Merluccius merluccius,169.8
+1964,Merluccius merluccius,127.1
+1965,Merluccius merluccius,125.4
+1966,Merluccius merluccius,50.8
+1967,Merluccius merluccius,32.9
+1968,Merluccius merluccius,195.7
+1969,Merluccius merluccius,154.3
+1970,Merluccius merluccius,137.7
+1971,Merluccius merluccius,79.5
+1972,Merluccius merluccius,88.3
+1973,Merluccius merluccius,158.1
+1974,Merluccius merluccius,101.2
+1975,Merluccius merluccius,90.8
+1976,Merluccius merluccius,86.9
+1977,Merluccius merluccius,73.6
+1978,Merluccius merluccius,83.5
+1979,Merluccius merluccius,40
+1980,Merluccius merluccius,51.8
+1981,Merluccius merluccius,65
+1982,Merluccius merluccius,60
+1983,Merluccius merluccius,80
+1984,Merluccius merluccius,90
+1985,Merluccius merluccius,75
+1986,Merluccius merluccius,85
+1987,Merluccius merluccius,75
+1988,Merluccius merluccius,65
+1989,Merluccius merluccius,71.825
+1990,Merluccius merluccius,59.485465
+1991,Merluccius merluccius,54.285335
+1992,Merluccius merluccius,102.335805
+1993,Merluccius merluccius,81.085212
+1994,Merluccius merluccius,97.929
+1995,Merluccius merluccius,97.929
+1996,Merluccius merluccius,117.208
+1997,Merluccius merluccius,86
+1998,Merluccius merluccius,134
+1999,Merluccius merluccius,60
+2000,Merluccius merluccius,62
+2001,Merluccius merluccius,73
+2002,Merluccius merluccius,68.3
+2003,Merluccius merluccius,60
+2004,Merluccius merluccius,38.9
+2005,Merluccius merluccius,36
+2006,Merluccius merluccius,18
+2007,Merluccius merluccius,10
+2008,Merluccius merluccius,5.963
+2009,Merluccius merluccius,1.926
+2010,Merluccius merluccius,2.398214362
+1950,Mugilidae,77.983
+1951,Mugilidae,69.288
+1952,Mugilidae,98.39
+1953,Mugilidae,100.181
+1954,Mugilidae,82.865
+1955,Mugilidae,84.781
+1956,Mugilidae,53.435
+1957,Mugilidae,54.269
+1958,Mugilidae,57.374
+1959,Mugilidae,55.714
+1960,Mugilidae,73.072
+1961,Mugilidae,117.759
+1962,Mugilidae,125.8
+1963,Mugilidae,101.2
+1964,Mugilidae,116.4
+1965,Mugilidae,108.7
+1966,Mugilidae,121.1
+1967,Mugilidae,105.6
+1968,Mugilidae,129.5
+1969,Mugilidae,147
+1970,Mugilidae,133.6
+1971,Mugilidae,126.8
+1972,Mugilidae,128.4
+1973,Mugilidae,156.6
+1974,Mugilidae,195.1
+1975,Mugilidae,188.5
+1976,Mugilidae,244.1
+1977,Mugilidae,203.4
+1978,Mugilidae,388.7
+1979,Mugilidae,363
+1980,Mugilidae,388.5
+1981,Mugilidae,300
+1982,Mugilidae,335
+1983,Mugilidae,290
+1984,Mugilidae,400
+1985,Mugilidae,280
+1986,Mugilidae,230
+1987,Mugilidae,235
+1988,Mugilidae,106
+1989,Mugilidae,88.8492
+1990,Mugilidae,102.0568
+1991,Mugilidae,76.903
+1992,Mugilidae,58.0562
+1993,Mugilidae,290.32
+1994,Mugilidae,223.5846
+1995,Mugilidae,327.4504
+1996,Mugilidae,296.814
+1997,Mugilidae,381.3
+1998,Mugilidae,283.3
+1999,Mugilidae,284
+2000,Mugilidae,172
+2001,Mugilidae,174.7
+2002,Mugilidae,157.6
+2003,Mugilidae,168.4
+2004,Mugilidae,108.2
+2005,Mugilidae,75
+2006,Mugilidae,183
+2007,Mugilidae,30
+2008,Mugilidae,80.51796298
+2009,Mugilidae,62.9
+2010,Mugilidae,46.17185193
+1950,Mullidae,466.825
+1951,Mullidae,454.647
+1952,Mullidae,435.351
+1953,Mullidae,579.614
+1954,Mullidae,529.094
+1955,Mullidae,588.473
+1956,Mullidae,620.246
+1957,Mullidae,577.044
+1958,Mullidae,635.02
+1959,Mullidae,617.298
+1960,Mullidae,462.793
+1961,Mullidae,345.605
+1962,Mullidae,276.1
+1963,Mullidae,231.7
+1964,Mullidae,216.7
+1965,Mullidae,257.6
+1966,Mullidae,231.8
+1967,Mullidae,299.3
+1968,Mullidae,271.5
+1969,Mullidae,353.2
+1970,Mullidae,377.9
+1971,Mullidae,317
+1972,Mullidae,347.6
+1973,Mullidae,309.2
+1974,Mullidae,237.6
+1975,Mullidae,240.5
+1976,Mullidae,281.5
+1977,Mullidae,267.4
+1978,Mullidae,233.9
+1979,Mullidae,285
+1980,Mullidae,286.8
+1981,Mullidae,315
+1982,Mullidae,292
+1983,Mullidae,345
+1984,Mullidae,520
+1985,Mullidae,430
+1986,Mullidae,475
+1987,Mullidae,455
+1988,Mullidae,495
+1989,Mullidae,546.975
+1990,Mullidae,453.004695
+1991,Mullidae,413.403705
+1992,Mullidae,181.774615
+1993,Mullidae,144.028116
+1994,Mullidae,173.947
+1995,Mullidae,173.947
+1996,Mullidae,203.32
+1997,Mullidae,185
+1998,Mullidae,276
+1999,Mullidae,350
+2000,Mullidae,340
+2001,Mullidae,401
+2002,Mullidae,368.4
+2003,Mullidae,324
+2004,Mullidae,153.7
+2005,Mullidae,257
+2006,Mullidae,182
+2007,Mullidae,143
+2008,Mullidae,136
+2009,Mullidae,104
+2010,Mullidae,115
+1950,Nemipterus randalli,0
+1951,Nemipterus randalli,0
+1952,Nemipterus randalli,0
+1953,Nemipterus randalli,0
+1954,Nemipterus randalli,0
+1955,Nemipterus randalli,0
+1956,Nemipterus randalli,0
+1957,Nemipterus randalli,0
+1958,Nemipterus randalli,0
+1959,Nemipterus randalli,0
+1960,Nemipterus randalli,0
+1961,Nemipterus randalli,0
+1962,Nemipterus randalli,0
+1963,Nemipterus randalli,0
+1964,Nemipterus randalli,0
+1965,Nemipterus randalli,0
+1966,Nemipterus randalli,0
+1967,Nemipterus randalli,0
+1968,Nemipterus randalli,0
+1969,Nemipterus randalli,0
+1970,Nemipterus randalli,0
+1971,Nemipterus randalli,0
+1972,Nemipterus randalli,0
+1973,Nemipterus randalli,0
+1974,Nemipterus randalli,0
+1975,Nemipterus randalli,0
+1976,Nemipterus randalli,0
+1977,Nemipterus randalli,0
+1978,Nemipterus randalli,0
+1979,Nemipterus randalli,0
+1980,Nemipterus randalli,0
+1981,Nemipterus randalli,0
+1982,Nemipterus randalli,0
+1983,Nemipterus randalli,0
+1984,Nemipterus randalli,0
+1985,Nemipterus randalli,0
+1986,Nemipterus randalli,0
+1987,Nemipterus randalli,0
+1988,Nemipterus randalli,0
+1989,Nemipterus randalli,0
+1990,Nemipterus randalli,0
+1991,Nemipterus randalli,0
+1992,Nemipterus randalli,0
+1993,Nemipterus randalli,0
+1994,Nemipterus randalli,0
+1995,Nemipterus randalli,0
+1996,Nemipterus randalli,0
+1997,Nemipterus randalli,0
+1998,Nemipterus randalli,0
+1999,Nemipterus randalli,0
+2000,Nemipterus randalli,0
+2001,Nemipterus randalli,0
+2002,Nemipterus randalli,0
+2003,Nemipterus randalli,0
+2004,Nemipterus randalli,0
+2005,Nemipterus randalli,4.396368716
+2006,Nemipterus randalli,32.33991899
+2007,Nemipterus randalli,60.28346925
+2008,Nemipterus randalli,88.22701952
+2009,Nemipterus randalli,126.229
+2010,Nemipterus randalli,147.244796
+1950,Sardinella spp.,280.77
+1951,Sardinella spp.,552.084
+1952,Sardinella spp.,471.096
+1953,Sardinella spp.,352.05
+1954,Sardinella spp.,582.822
+1955,Sardinella spp.,406.34
+1956,Sardinella spp.,546.379
+1957,Sardinella spp.,649.712
+1958,Sardinella spp.,1270.2
+1959,Sardinella spp.,1145.515
+1960,Sardinella spp.,1334.325
+1961,Sardinella spp.,1063.043
+1962,Sardinella spp.,1520.3
+1963,Sardinella spp.,1078
+1964,Sardinella spp.,1358.9
+1965,Sardinella spp.,1450.5
+1966,Sardinella spp.,1402.9
+1967,Sardinella spp.,1086.4
+1968,Sardinella spp.,1360.2
+1969,Sardinella spp.,843.2
+1970,Sardinella spp.,1186.3
+1971,Sardinella spp.,1389.8
+1972,Sardinella spp.,1622
+1973,Sardinella spp.,1621.3
+1974,Sardinella spp.,939.3
+1975,Sardinella spp.,936.5
+1976,Sardinella spp.,342.9
+1977,Sardinella spp.,421.5
+1978,Sardinella spp.,134.1
+1979,Sardinella spp.,343
+1980,Sardinella spp.,816.2
+1981,Sardinella spp.,474
+1982,Sardinella spp.,688
+1983,Sardinella spp.,890
+1984,Sardinella spp.,1036
+1985,Sardinella spp.,657
+1986,Sardinella spp.,406
+1987,Sardinella spp.,260
+1988,Sardinella spp.,322
+1989,Sardinella spp.,269.9004
+1990,Sardinella spp.,310.0216
+1991,Sardinella spp.,233.611
+1992,Sardinella spp.,654
+1993,Sardinella spp.,563
+1994,Sardinella spp.,536.1
+1995,Sardinella spp.,596.7
+1996,Sardinella spp.,580.4
+1997,Sardinella spp.,434.8
+1998,Sardinella spp.,557.2
+1999,Sardinella spp.,306
+2000,Sardinella spp.,88
+2001,Sardinella spp.,117.1
+2002,Sardinella spp.,143.3
+2003,Sardinella spp.,118.4
+2004,Sardinella spp.,85.7
+2005,Sardinella spp.,168.3
+2006,Sardinella spp.,63
+2007,Sardinella spp.,181.5
+2008,Sardinella spp.,123.216
+2009,Sardinella spp.,162.232
+2010,Sardinella spp.,91.413583
+1950,Saurida undosquamis,0
+1951,Saurida undosquamis,0
+1952,Saurida undosquamis,0
+1953,Saurida undosquamis,0
+1954,Saurida undosquamis,0
+1955,Saurida undosquamis,11.571
+1956,Saurida undosquamis,266.553
+1957,Saurida undosquamis,301.826
+1958,Saurida undosquamis,342.384
+1959,Saurida undosquamis,398.636
+1960,Saurida undosquamis,280.751
+1961,Saurida undosquamis,232.29
+1962,Saurida undosquamis,185
+1963,Saurida undosquamis,114.2
+1964,Saurida undosquamis,120.5
+1965,Saurida undosquamis,149.6
+1966,Saurida undosquamis,98.8
+1967,Saurida undosquamis,127
+1968,Saurida undosquamis,132.2
+1969,Saurida undosquamis,258.1
+1970,Saurida undosquamis,150.1
+1971,Saurida undosquamis,309.5
+1972,Saurida undosquamis,330.1
+1973,Saurida undosquamis,248.1
+1974,Saurida undosquamis,201
+1975,Saurida undosquamis,205.7
+1976,Saurida undosquamis,206.9
+1977,Saurida undosquamis,204
+1978,Saurida undosquamis,193
+1979,Saurida undosquamis,245
+1980,Saurida undosquamis,207.2
+1981,Saurida undosquamis,170
+1982,Saurida undosquamis,140
+1983,Saurida undosquamis,90
+1984,Saurida undosquamis,80
+1985,Saurida undosquamis,85
+1986,Saurida undosquamis,120
+1987,Saurida undosquamis,135
+1988,Saurida undosquamis,170
+1989,Saurida undosquamis,187.85
+1990,Saurida undosquamis,155.57737
+1991,Saurida undosquamis,141.97703
+1992,Saurida undosquamis,234.827175
+1993,Saurida undosquamis,186.06402
+1994,Saurida undosquamis,224.715
+1995,Saurida undosquamis,224.715
+1996,Saurida undosquamis,111.228
+1997,Saurida undosquamis,61
+1998,Saurida undosquamis,37
+1999,Saurida undosquamis,48
+2000,Saurida undosquamis,21
+2001,Saurida undosquamis,24
+2002,Saurida undosquamis,23.8
+2003,Saurida undosquamis,20
+2004,Saurida undosquamis,153.7
+2005,Saurida undosquamis,119
+2006,Saurida undosquamis,76
+2007,Saurida undosquamis,49
+2008,Saurida undosquamis,65.8505
+2009,Saurida undosquamis,82.701
+2010,Saurida undosquamis,140.8272888
+1950,Scomber japonicus,15.23
+1951,Scomber japonicus,116.421
+1952,Scomber japonicus,10.594
+1953,Scomber japonicus,4.029
+1954,Scomber japonicus,138.459
+1955,Scomber japonicus,54.415
+1956,Scomber japonicus,9.584
+1957,Scomber japonicus,69.38
+1958,Scomber japonicus,36.782
+1959,Scomber japonicus,63.223
+1960,Scomber japonicus,118.591
+1961,Scomber japonicus,44.836
+1962,Scomber japonicus,40
+1963,Scomber japonicus,33.7
+1964,Scomber japonicus,49.9
+1965,Scomber japonicus,91.2
+1966,Scomber japonicus,57.2
+1967,Scomber japonicus,25.5
+1968,Scomber japonicus,25.5
+1969,Scomber japonicus,93.3
+1970,Scomber japonicus,68.6
+1971,Scomber japonicus,108.8
+1972,Scomber japonicus,100.1
+1973,Scomber japonicus,59.5
+1974,Scomber japonicus,95.4
+1975,Scomber japonicus,96
+1976,Scomber japonicus,93.7
+1977,Scomber japonicus,11.3
+1978,Scomber japonicus,76.7
+1979,Scomber japonicus,68
+1980,Scomber japonicus,198
+1981,Scomber japonicus,232
+1982,Scomber japonicus,195
+1983,Scomber japonicus,160
+1984,Scomber japonicus,105
+1985,Scomber japonicus,115
+1986,Scomber japonicus,29.7
+1987,Scomber japonicus,110
+1988,Scomber japonicus,100
+1989,Scomber japonicus,86.488
+1990,Scomber japonicus,95.80361
+1991,Scomber japonicus,73.64659
+1992,Scomber japonicus,49.293
+1993,Scomber japonicus,173
+1994,Scomber japonicus,77.2
+1995,Scomber japonicus,52.4
+1996,Scomber japonicus,107
+1997,Scomber japonicus,46.9
+1998,Scomber japonicus,54.2
+1999,Scomber japonicus,44
+2000,Scomber japonicus,39.98
+2001,Scomber japonicus,30.1
+2002,Scomber japonicus,20.3
+2003,Scomber japonicus,10.4
+2004,Scomber japonicus,7
+2005,Scomber japonicus,22.2
+2006,Scomber japonicus,56
+2007,Scomber japonicus,107
+2008,Scomber japonicus,81.5
+2009,Scomber japonicus,82.451
+2010,Scomber japonicus,102.4516837
+1950,Seriola dumerili,4.568
+1951,Seriola dumerili,6.543
+1952,Seriola dumerili,8.395
+1953,Seriola dumerili,14.27236967
+1954,Seriola dumerili,16.37658161
+1955,Seriola dumerili,18.48079356
+1956,Seriola dumerili,20.5850055
+1957,Seriola dumerili,22.68921744
+1958,Seriola dumerili,24.79342938
+1959,Seriola dumerili,26.89764133
+1960,Seriola dumerili,29.00185327
+1961,Seriola dumerili,31.10606521
+1962,Seriola dumerili,33.21027716
+1963,Seriola dumerili,35.3144891
+1964,Seriola dumerili,37.41870104
+1965,Seriola dumerili,39.52291298
+1966,Seriola dumerili,41.62712493
+1967,Seriola dumerili,43.73133687
+1968,Seriola dumerili,45.83554881
+1969,Seriola dumerili,47.93976075
+1970,Seriola dumerili,50.0439727
+1971,Seriola dumerili,52.14818464
+1972,Seriola dumerili,54.25239658
+1973,Seriola dumerili,56.35660852
+1974,Seriola dumerili,58.46082047
+1975,Seriola dumerili,60.56503241
+1976,Seriola dumerili,62.66924435
+1977,Seriola dumerili,64.7734563
+1978,Seriola dumerili,66.87766824
+1979,Seriola dumerili,68.98188018
+1980,Seriola dumerili,69.3
+1981,Seriola dumerili,80
+1982,Seriola dumerili,90
+1983,Seriola dumerili,100
+1984,Seriola dumerili,90
+1985,Seriola dumerili,150
+1986,Seriola dumerili,118.2
+1987,Seriola dumerili,75
+1988,Seriola dumerili,65
+1989,Seriola dumerili,54.483
+1990,Seriola dumerili,62.582
+1991,Seriola dumerili,47.1575
+1992,Seriola dumerili,35.6005
+1993,Seriola dumerili,60.8
+1994,Seriola dumerili,46.824
+1995,Seriola dumerili,68.576
+1996,Seriola dumerili,62.16
+1997,Seriola dumerili,80.1
+1998,Seriola dumerili,185.4
+1999,Seriola dumerili,98
+2000,Seriola dumerili,207
+2001,Seriola dumerili,222.8
+2002,Seriola dumerili,200.7
+2003,Seriola dumerili,118.5
+2004,Seriola dumerili,76.4
+2005,Seriola dumerili,276.1
+2006,Seriola dumerili,120
+2007,Seriola dumerili,126
+2008,Seriola dumerili,109.2
+2009,Seriola dumerili,58.8
+2010,Seriola dumerili,38.13024653
+1950,Siganus,151.5772263
+1951,Siganus,1.996
+1952,Siganus,3.906
+1953,Siganus,147.4160995
+1954,Siganus,146.0290572
+1955,Siganus,144.642015
+1956,Siganus,143.2549727
+1957,Siganus,141.8679304
+1958,Siganus,140.4808882
+1959,Siganus,139.0938459
+1960,Siganus,137.7068036
+1961,Siganus,136.3197613
+1962,Siganus,134.9327191
+1963,Siganus,133.5456768
+1964,Siganus,132.1586345
+1965,Siganus,130.7715923
+1966,Siganus,129.38455
+1967,Siganus,127.9975077
+1968,Siganus,126.6104654
+1969,Siganus,125.2234232
+1970,Siganus,123.8363809
+1971,Siganus,122.4493386
+1972,Siganus,121.0622964
+1973,Siganus,119.6752541
+1974,Siganus,118.2882118
+1975,Siganus,116.9011695
+1976,Siganus,115.5141273
+1977,Siganus,114.127085
+1978,Siganus,112.7400427
+1979,Siganus,111.3530004
+1980,Siganus,95
+1981,Siganus,110
+1982,Siganus,140
+1983,Siganus,170
+1984,Siganus,290
+1985,Siganus,345
+1986,Siganus,273.98
+1987,Siganus,125
+1988,Siganus,130
+1989,Siganus,114.302
+1990,Siganus,124.21122
+1991,Siganus,96.50818
+1992,Siganus,60.247
+1993,Siganus,91.93440864
+1994,Siganus,90.54736637
+1995,Siganus,89.16032409
+1996,Siganus,87.77328182
+1997,Siganus,86.38623955
+1998,Siganus,84.99919728
+1999,Siganus,83.612155
+2000,Siganus,67
+2001,Siganus,60.4
+2002,Siganus,53.9
+2003,Siganus,47.3
+2004,Siganus,40.7
+2005,Siganus,34.1
+2006,Siganus,34
+2007,Siganus,6
+2008,Siganus,13
+2009,Siganus,7.5
+2010,Siganus,4.5
+1950,Soleidae,29.762
+1951,Soleidae,7.92
+1952,Soleidae,5.26
+1953,Soleidae,11.968
+1954,Soleidae,13.08
+1955,Soleidae,8.148
+1956,Soleidae,8.997
+1957,Soleidae,4.998
+1958,Soleidae,15.941
+1959,Soleidae,31.957
+1960,Soleidae,19.375
+1961,Soleidae,12.087
+1962,Soleidae,16
+1963,Soleidae,9
+1964,Soleidae,6.1
+1965,Soleidae,11.4
+1966,Soleidae,13.5
+1967,Soleidae,13
+1968,Soleidae,11
+1969,Soleidae,9.9
+1970,Soleidae,14.4
+1971,Soleidae,29.8
+1972,Soleidae,16.7
+1973,Soleidae,18.8
+1974,Soleidae,0
+1975,Soleidae,1.6
+1976,Soleidae,10
+1977,Soleidae,17.5
+1978,Soleidae,26.5
+1979,Soleidae,40
+1980,Soleidae,13.4
+1981,Soleidae,26
+1982,Soleidae,30
+1983,Soleidae,30
+1984,Soleidae,22
+1985,Soleidae,12
+1986,Soleidae,12
+1987,Soleidae,12
+1988,Soleidae,15
+1989,Soleidae,16.575
+1990,Soleidae,13.727415
+1991,Soleidae,12.527385
+1992,Soleidae,0
+1993,Soleidae,0
+1994,Soleidae,0
+1995,Soleidae,0
+1996,Soleidae,0
+1997,Soleidae,0
+1998,Soleidae,0
+1999,Soleidae,0
+2000,Soleidae,0
+2001,Soleidae,0
+2002,Soleidae,0
+2003,Soleidae,0
+2004,Soleidae,0
+2005,Soleidae,0
+2006,Soleidae,0
+2007,Soleidae,0
+2008,Soleidae,0
+2009,Soleidae,0.8
+2010,Soleidae,1.5
+1950,Sphyraena,8.419
+1951,Sphyraena,18.999
+1952,Sphyraena,16.512
+1953,Sphyraena,32.013
+1954,Sphyraena,66.74
+1955,Sphyraena,117.477
+1956,Sphyraena,53.748
+1957,Sphyraena,38.423
+1958,Sphyraena,95.067
+1959,Sphyraena,56.442
+1960,Sphyraena,65.986
+1961,Sphyraena,51.288
+1962,Sphyraena,55.6
+1963,Sphyraena,54.7
+1964,Sphyraena,28.8
+1965,Sphyraena,57.9
+1966,Sphyraena,65.9
+1967,Sphyraena,86.2
+1968,Sphyraena,100.6
+1969,Sphyraena,106.8
+1970,Sphyraena,108.5
+1971,Sphyraena,205.1
+1972,Sphyraena,142.7
+1973,Sphyraena,172.1
+1974,Sphyraena,138.2
+1975,Sphyraena,154.7
+1976,Sphyraena,118
+1977,Sphyraena,80.9
+1978,Sphyraena,249.2
+1979,Sphyraena,122
+1980,Sphyraena,130.2
+1981,Sphyraena,122
+1982,Sphyraena,98
+1983,Sphyraena,134
+1984,Sphyraena,152
+1985,Sphyraena,210
+1986,Sphyraena,186.08
+1987,Sphyraena,310
+1988,Sphyraena,285
+1989,Sphyraena,262.899
+1990,Sphyraena,270.11049
+1991,Sphyraena,216.63681
+1992,Sphyraena,106.8015
+1993,Sphyraena,79.8
+1994,Sphyraena,61.4565
+1995,Sphyraena,90.006
+1996,Sphyraena,81.585
+1997,Sphyraena,104.4
+1998,Sphyraena,104.6
+1999,Sphyraena,159
+2000,Sphyraena,77
+2001,Sphyraena,55.1
+2002,Sphyraena,53.7
+2003,Sphyraena,76.9
+2004,Sphyraena,184
+2005,Sphyraena,161.8
+2006,Sphyraena,130
+2007,Sphyraena,185
+2008,Sphyraena,120.75
+2009,Sphyraena,101.7
+2010,Sphyraena,66
