@@ -52,7 +52,8 @@ launch_app(scenario)
 
 After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/ohi-israel/med2014' folder to open in future.
 
-As an alternative to `get_scenarios` in the install script above, you can [fork and clone](https://help.github.com/articles/fork-a-repo) this repository. (I recommend cloning to `~/github/ohi-israel`). This would allow you to commit changes to your local version, push commits up to github for offsite archiving, and eventually make a pull request to have those changes merged back to ohi-science/ohi-israel. See [Setup](https://github.com/OHI-Science/ohiprep/wiki/Setup) for installation of git, Github and RStudio. If you wish to modify the ohi-science/ohi-israel files directly (so no need to fork or send pull requests; simply clone from ohi-science/ohi-israel and push/pull from there), you can alternatively provide your Github username (easy to [signup](http://github.com)) to bbest@nceas.ucsb.edu for write access.
+### Install alternative
+\*\* As an alternative to `get_scenarios` in the install script above, you can use GitHub to commit changes to your local version, push commits up to github for offsite archiving, and eventually make a pull request to have those changes merged back to `ohi-science/ohi-israel`. See instructions for [accessing a repository](https://github.com/OHI-Science/ohimanual/blob/master/tutorials/accessing_a_repo/accessing_a_repo.md#accessing-github-repositories) with or without GitHub.
 
 ## Regions
 The 6 regions and ancillary buffers (offshore, offshore1km, offshore3nm, inland, inland1km, inland25km) were created at: 
