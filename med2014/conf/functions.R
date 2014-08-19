@@ -443,251 +443,51 @@ AO = function(layers,
   return(scores)  
 }
 
-NP = function(scores, layers, year_max, debug=T){
-  # TODO: add smoothing a la PLoS 2013 manuscript
-  # TODO: move goal function code up to np_harvest_usd-peak-product-weight_year-max-%d.csv into ohiprep so layer ready already for calculating pressures & resilience
-
-  # FIS status
-  FIS_status =  scores %>% 
-    filter(goal=='FIS' & dimension=='status') %>%
-    select(rgn_id=region_id, score)  
+# Hila, 27/4/14, Changes to Natural products to use desalination only as product (see IsraelUpdate documentation)
+NP = function(layers){
   
   # layers
-  rgns         = layers$data[['rgn_labels']]
-  h_tonnes     = layers$data[['np_harvest_tonnes']]
-  h_tonnes_rel = layers$data[['np_harvest_tonnes_relative']]
-  h_usd        = layers$data[['np_harvest_usd']]
-  h_usd_rel    = layers$data[['np_harvest_usd_relative']]
-  h_w          = layers$data[['np_harvest_product_weight']]
-  r_cyanide    = layers$data[['np_cyanide']]
-  r_blast      = layers$data[['np_blast']]  
-  hab_extent   = layers$data[['hab_extent']]
+  lyrs = list('rky' = c('rnky_np_desal_relative'    = 'w'), # Desalination score (relative to a target value)
+              'rk'  = c('rnk_np_sustainability_score' = 'S')) # Sustainability score
+  lyr_names = sub('^\\w*\\.', '', names(unlist(lyrs))) 
   
-  # extract habitats used
-  hab_coral = hab_extent %>%
-    filter(habitat=='coral') %>%
-    select(rgn_id, km2)
-  hab_rky   = hab_extent %>%
-    filter(habitat=='rocky_reef') %>%
-    select(rgn_id, km2)
+  # cast data
+  D = SelectLayersData(layers, layers=lyr_names)
+  year_min=max(min(D$year, na.rm=T), max(D$year, na.rm=T)-10) # min year to caculate 5 last years trend
+  status_year=max(D$year, na.rm=T) # status year is max year with data
   
-  if (debug & !file.exists('temp')) dir.create('temp', recursive=T)
+  rky = rename(dcast(D, id_num + category + year ~ layer, value.var='val_num', subset = .(layer %in% names(lyrs[['rky']]))),
+               c('id_num'='region_id', 'category'='plant', lyrs[['rky']]))
+  rk  = rename(dcast(D, id_num + category ~ layer, value.var='val_num', subset = .(layer %in% names(lyrs[['rk']]))),
+               c('id_num'='region_id', 'category'='plant', lyrs[['rk']]))
   
-  # merge harvest in tonnes and usd
-  h = 
-    join_all(
-      list(
-        h_tonnes, 
-        h_tonnes_rel, 
-        h_usd,
-        h_usd_rel),
-      by=c('rgn_id','product','year'),      
-      type='full') %>%
-    left_join(
-      h_w %>%
-        select(rgn_id, product, usd_peak_product_weight=weight),
-      by=c('rgn_id','product')) %>%
-    left_join(
-      rgns %>%
-        select(rgn_id, rgn_name=label),
-      by='rgn_id') %>%
-    select(
-      rgn_name, rgn_id, product, year, 
-      tonnes, tonnes_rel,
-      usd, usd_rel,
-      usd_peak_product_weight) %>%
-    arrange(rgn_id, product, year) %>%
-    group_by(rgn_id, product)
-      
-  if (debug){
-    # write out data
-    write.csv(h, sprintf('temp/%s_NP_1-harvest-rgn-year-product_data.csv', basename(getwd())), row.names=F, na='')
-  }
+  # merge W with S
+  rky = merge(rky, rk, all.x=T)
   
-  # area for poducts having single habitats for exposure
-  a = rbind_list(
-    # corals in coral reef
-    h %>%
-      filter(product=='corals') %>%
-      left_join(
-        hab_coral %>%
-          filter(km2 > 0) %>%
-          select(rgn_id, km2), by='rgn_id'),
-    # seaweeds in rocky reef
-    h %>%
-      filter(product=='seaweeds') %>%
-      left_join(
-        hab_rky %>%
-          filter(km2 > 0) %>%
-          select(rgn_id, km2), by='rgn_id'))
+  # get status across stations, per region and year
+  ry = ddply(rky, .(region_id, year), summarize,
+             status = sum(w * S) * 100); head(ry)
+  r.status = subset(ry, year==status_year, c(region_id,status))
   
-  # area for products in both coral and rocky reef habitats: shells, ornamentals, sponges
-  b = h %>%
-    filter(product %in% c('shells', 'ornamentals','sponges')) %>%
-    left_join(
-      hab_coral %>%
-        filter(km2 > 0) %>%
-        select(rgn_id, coral_km2=km2), 
-      by='rgn_id') %>%
-    left_join(
-      hab_rky %>%
-        filter(km2 > 0) %>%
-        select(rgn_id, rky_km2=km2), 
-      by='rgn_id')
-  b$km2 = rowSums(b[,c('rky_km2','coral_km2')], na.rm=T)
-  b = filter(b, km2 > 0)
   
-  # exposure: combine areas, get tonnes / area, and rescale with log transform
-  E = 
-    rbind_list(
-      a,
-      b %>%
-        select(-rky_km2, -coral_km2)) %>%
-    mutate(
-      exposure_raw = ifelse(tonnes > 0 & km2 > 0, tonnes / km2, 0)) %>%
-    group_by(product) %>%
-    mutate(
-      exposure_product_max = max(exposure_raw, na.rm=T)) %>%
-    ungroup() %>%
-    mutate(
-      exposure = log(exposure_raw + 1) / log(exposure_product_max + 1))
-    
-  # add exposure for fish_oil
-  E = 
-    rbind_list(
-      E,
-      h %>%
-        filter(product=='fish_oil') %>%
-        left_join(
-          FIS_status %>%
-            mutate(
-              exposure = score/100) %>%
-            select(rgn_id, exposure),
-          by='rgn_id'))
-  
-  if (debug){
-    cat('Regions without FIS_status having harvest values:\n')
-    E %>%
-      filter(product=='fish_oil' & is.na(exposure)) %>% 
-      group_by(rgn_name) %>%
-      summarize(n=n())
-    #         rgn_name  n
-    # 1        Bonaire  9
-    # 2       DISPUTED 12
-    # 3           Saba  9
-    # 4 Sint Eustatius  9    
-  }
-  
-  # assign fish_oil exposure to 0 if missing FIS status
-  E = E %>% mutate(
-    exposure = ifelse(is.na(exposure), 0, exposure))
-  
-  # risk for ornamentals set to 1 if blast or cyanide fishing present, based on Nature 2012 code
-  #  despite Nature 2012 Suppl saying Risk for ornamental fish is set to the "relative intensity of cyanide fishing"
-  r_orn = r_cyanide %>%
-    filter(!is.na(score) & score > 0) %>%
-    select(rgn_id, cyanide=score) %>%  
-    merge(
-      r_blast %>%
-        filter(!is.na(score) & score > 0) %>%
-        select(rgn_id, blast=score),
-      all=T) %>%
-    mutate(
-      ornamentals = 1)
-  
-  # risk as binary
-  R = 
-    # fixed risk: corals (1), sponges (0) and shells (0)
-    data.frame(
-      rgn_id  = rgns$rgn_id,
-      corals  = 1,
-      sponges = 0,
-      shells  = 0) %>%  
-    # ornamentals
-    left_join(
-      r_orn %>%
-        select(rgn_id, ornamentals),
-      by = 'rgn_id')  %>%
-    mutate(
-      ornamentals = ifelse(is.na(ornamentals), 0, ornamentals)) %>%
-    melt(id='rgn_id', variable.name='product', value.name='risk')
-  
-  # join Exposure (with harvest) and Risk
-  D = E %>%
-    left_join(
-      R,
-      by=c('rgn_id','product'))
-  D$sustainability = 1 - rowMeans(D[,c('exposure','risk')], na.rm=T)
-  
-  if (debug){
-    # show NAS
-    cat('NAs between exposure and risk\n')
-    table(mutate(D, risk_na=is.na(risk), exposure_na=is.na(exposure)) %>% select(product, risk_na, exposure_na))
-    # , , exposure_na = FALSE
-    # 
-    #              risk_na
-    # product       FALSE TRUE
-    #   corals       1347    0
-    #   fish_oil        0 2689
-    #   ornamentals  2515    0
-    #   seaweeds        0 1977
-    #   shells       1142    0
-    #   sponges      1208    0    
-  }
-  
-  # calculate rgn-product-year status
-  D = mutate(D, product_status = tonnes_rel * sustainability) %.%
-    filter(rgn_name != 'DISPUTED')
-  
-  # aggregate across products to rgn-year status, weighting by usd_rel
-  S = D %>%
-    group_by(rgn_name, rgn_id, year) %>%
-    filter(!is.na(product_status) & !is.na(usd_peak_product_weight)) %>%
-    #select(rgn_name, rgn_id, year, product_status, usd_peak_product_weight) %>%
-    summarize(
-      status = weighted.mean(product_status, usd_peak_product_weight)) %>%
-    filter(!is.na(status)) %>% # 1/0 produces NaN
-    ungroup()
-
-  if (debug){
-    # write out data
-    write.csv(D, sprintf('temp/%s_NP_2-rgn-year-product_data.csv', basename(getwd())), row.names=F, na='')
-    write.csv(S, sprintf('temp/%s_NP_3-rgn-year_status.csv', basename(getwd())), row.names=F, na='')
-  }
-
-  # get status
-  status = S %>%
-    filter(year==year_max & !is.na(status)) %>%
-    mutate(
-      dimension = 'status',
-      score     = round(status,4) * 100) %>%
-    select(rgn_id, dimension, score) %>%
-    arrange(rgn_id) # 30 status==NAs for year_max==2011
-  stopifnot(min(status$score, na.rm=T)>=0, max(status$score, na.rm=T)<=100)
-  
-  # trend based on 5 intervals (6 years of data)
-  trend = S %>%
-    filter(year <= year_max & year > (year_max - 5) & !is.na(status)) %>%
-    arrange(rgn_id, year) %>%
-    group_by(rgn_id) %>%
-    do(mdl = lm(status ~ year, data=.)) %>%
-    summarize(
-      rgn_id    = rgn_id,
-      dimension = 'trend',
-      score     = max(-1, min(1, coef(mdl)[['year']] * 5)))
-  stopifnot(min(trend$score)>=-1, max(trend$score)<=1)
+  # trend: ternd is the slope of
+  # status before multiplied by 100 (status between 0-1)
+  r.trend = ddply(subset(
+    ry, year >= year_min), .(region_id), function(x){      
+    data.frame(trend = 
+      if(length(na.omit(x$status))>1) {
+        # use only last valid 5 years worth of status data since year_min
+        d = data.frame(status=x$status, year=x$year)[tail(which(!is.na(x$status)), 5),];
+        lm(status ~ year, d)$coefficients[['year']] / 100
+      } else {
+        NA
+      })});
   
   # return scores
-  scores_NP = 
-    rbind_list(
-      status,
-      trend) %>%
-    mutate(
-      goal = 'NP') %>%
-    select(goal, dimension, region_id=rgn_id, score) %>%
-    arrange(goal, dimension, region_id)
-  # scores_NP %>% filter(region_id==136)
-  return(scores_NP)
+  s.status = cbind(rename(r.status, c('status'='score')), data.frame('dimension'='status'))
+  s.trend  = cbind(rename(r.trend , c('trend' ='score')), data.frame('dimension'='trend'))
+  scores = cbind(rbind(s.status, s.trend), data.frame('goal'='NP'))
+  return(scores)  
 }
 
 CS = function(layers){
