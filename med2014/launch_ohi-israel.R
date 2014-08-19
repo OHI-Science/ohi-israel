@@ -23,8 +23,8 @@ load_all('~/github/ohicore')
 library(ohicore)
 
 # set working directory
-setwd("C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel/med2014") 
-    # setwd('~/github/ohi-israel/med2014') # if it's possible to save the folder in a shorter path that is preferred
+# setwd("C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel/med2014") 
+setwd('~/github/ohi-israel/med2014') # if it's possible to save the folder in a shorter path that is preferred
 
 # run toolbox calculations
 source('calculate_scores.r') # runs local ohi-israel/med2014/calculate_scores.r
