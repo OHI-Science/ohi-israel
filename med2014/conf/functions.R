@@ -262,7 +262,7 @@ MAR = function(layers, status_years=2005:2011){
     merge(sustainability_score, all.x=TRUE, by=c('rgn_id', 'species')) %.%
     dcast(rgn_id + species + species_code + sust_coeff ~ year, value.var='tonnes', mean, na.rm=T)
     
-  x = csv_compare(rky, '1-rky')
+#   x = csv_compare(rky, '1-rky')
   
   # smooth each species-country time-series using a running mean with 4-year window, excluding NAs from the 4-year mean calculation
   # TODO: simplify below with dplyr::group_by()
@@ -309,22 +309,7 @@ MAR = function(layers, status_years=2005:2011){
   ry_b = csv_compare(ry, '6-ry-ddply')  # RIGHT
   ry_a = ry
   eq = all.equal(ry_a, ry_b)
-  if (class(eq) == 'character') browser()
-
-#   # DEBUG
-#   ry_b = csv_compare(ry, '6-ry-ddply')  # RIGHT
-#   ry_a = ry                             # WRONG
-#   
-#   ry_a %>% # WRONG
-#     filter(rgn_id==25)
-#   ry_b %>% # RIGHT
-#     filter(rgn_id==25)
-#   
-# 
-#   
-#   all.equal(ry_n, ry_a)
-#   all.equal(ry_n, ry_b)
-  
+  if (class(eq) == 'character') browser()  
   
   # get reference quantile based on argument years
   ref_95pct = quantile(subset(ry, year <= max(status_years), mar_pop, drop=T), 0.95, na.rm=T)
@@ -366,8 +351,6 @@ MAR = function(layers, status_years=2005:2011){
         mutate(dimension = 'trend')) %.%
     mutate(goal='MAR')
   
-  cat(sprintf('DEBUG: MAR status for Thailand[25]: %g\n', subset(scores, region_id==25 & goal=='MAR' & dimension=='status', score)))
-
   return(scores)
   # NOTE: some differences to www2013 are due to 4_yr species only previously getting trend calculated to 4 years (instead of 5)
 }
