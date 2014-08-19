@@ -204,110 +204,20 @@ FIS = function(layers, status_year=2011){
   return(scores)  
 }
 
-MAR = function(layers, status_years=2005:2011){  
-  # layers used: mar_harvest_tonnes, mar_harvest_species, mar_sustainability_score, mar_coastalpopn_inland25mi, mar_trend_years
+MAR = function(layers){
   
-  harvest_tonnes = rename(
-    SelectLayersData(layers, layers='mar_harvest_tonnes', narrow=T),
-    c('id_num'='rgn_id', 'category'='species_code', 'year'='year', 'val_num'='tonnes'))
-  harvest_species = rename(
-    SelectLayersData(layers, layers='mar_harvest_species', narrow=T),
-    c('category'='species_code', 'val_chr'='species'))
-  sustainability_score = rename(
-    SelectLayersData(layers, layers='mar_sustainability_score', narrow=T),
-    c('id_num'='rgn_id', 'category'='species', 'val_num'='sust_coeff'))
-  popn_inland25mi = rename(
-    SelectLayersData(layers, layers='mar_coastalpopn_inland25mi', narrow=T),
-    c('id_num'='rgn_id', 'year'='year', 'val_num'='popsum'))
-  trend_years = rename(
-    SelectLayersData(layers, layers='mar_trend_years', narrow=T),
-    c('id_num'='rgn_id', 'val_chr'='trend_yrs'))
+  # status
+  r.status = rename(SelectLayersData(layers, layers='rn_mar_status', narrow=T), c('id_num'='region_id','val_num'='score'))
+  r.status$score = r.status$score * 100
   
-  # merge and cast harvest with sustainability
-  #   harvest_species$species = as.character(harvest_species$species)
-  #   rky = dcast(merge(merge(harvest_tonnes, 
-  #                             harvest_species, all.x=TRUE, by=c('species_code')),
-  #                       sustainability_score, all.x=TRUE, by=c('rgn_id', 'species')),
-  #                 rgn_id + species + species_code + sust_coeff ~ year, value.var='tonnes', mean, na.rm=T); head(rky)
-  rky = harvest_tonnes %.%
-    merge(harvest_species     , all.x=TRUE, by='species_code') %.%
-    merge(sustainability_score, all.x=TRUE, by=c('rgn_id', 'species')) %.%
-    dcast(rgn_id + species + species_code + sust_coeff ~ year, value.var='tonnes', mean, na.rm=T)
-    
-#   x = csv_compare(rky, '1-rky')
-  
-  # smooth each species-country time-series using a running mean with 4-year window, excluding NAs from the 4-year mean calculation
-  # TODO: simplify below with dplyr::group_by()
-  yrs_smooth <- names(rky)[!names(rky) %in% c('rgn_id','species','species_code','sust_coeff')]
-  rky_smooth = zoo::rollapply(t(rky[,yrs_smooth]), 4, mean, na.rm = TRUE, partial=T) 
-  rownames(rky_smooth) = as.character(yrs_smooth)
-  rky_smooth = t(rky_smooth)
-  rky = as.data.frame(cbind(rky[, c('rgn_id','species','species_code','sust_coeff')], rky_smooth)); head(rky)
-    
-  # melt
-  m = melt(rky,
-           id=c('rgn_id', 'species', 'species_code', 'sust_coeff'),
-           variable.name='year', value.name='sm_tonnes'); head(m)
-    
-  # for each species-country-year, smooth mariculture harvest times the sustainability coefficient
-  m = within(m, {
-    sust_tonnes = sust_coeff * sm_tonnes
-    year        = as.numeric(as.character(m$year))
-  })
-  
-  # merge the MAR and coastal human population data
-  m = merge(m, popn_inland25mi, by=c('rgn_id','year'), all.x=T)
-    
-  # aggregate all weighted timeseries per region, and divide by coastal human population
-  ry = m %>%
-    group_by(rgn_id, year) %>%
-    summarize(
-      sust_tonnes_sum = sum(sust_tonnes)) %>%
-    merge(
-      popn_inland25mi, by=c('rgn_id','year'), all.x=T) %>%
-    mutate(
-      mar_pop         = sust_tonnes_sum / popsum) %>%
-    select(rgn_id, year, popsum, sust_tonnes_sum, mar_pop)
-  ry_b = csv_compare(ry, '6-ry-ddply')  # RIGHT
-  ry_a = ry
-  eq = all.equal(ry_a, ry_b)
-  if (class(eq) == 'character') browser()  
-  
-  # get reference quantile based on argument years
-  ref_95pct = quantile(subset(ry, year <= max(status_years), mar_pop, drop=T), 0.95, na.rm=T)
-  
-  ry = within(ry, {
-    status = ifelse(mar_pop / ref_95pct > 1, 
-                    1,
-                    mar_pop / ref_95pct)})
-  status <- subset(ry, year == max(status_years), c('rgn_id', 'status'))
-  status$status <- round(status$status*100, 2)  
-  
-  # get MAR trend
-  ry = merge(ry, trend_years, all.x=T)
-  yr_max = max(status_years)
-  trend = ddply(ry, .(rgn_id), function(x){  # x = subset(ry, rgn_id==5)
-    yrs = ifelse(x$trend_yrs=='4_yr',
-                 (yr_max-5):(yr_max-1), # 4_yr
-                 (yr_max-5):(yr_max))   # 5_yr
-    y = subset(x, year %in% yrs)
-    return(data.frame(
-      trend = round(max(min(lm(status ~ year, data=y)$coefficients[['year']] * 5, 1), -1), 2)))  
-    })
+  # trend
+  r.trend = rename(SelectLayersData(layers, layers='rn_mar_trend', narrow=T), c('id_num'='region_id','val_num'='score'))
   
   # return scores
-  scores = status %.%
-    select(region_id = rgn_id,
-           score     = status) %.%
-    mutate(dimension='status') %.%
-    rbind(
-      trend %.%
-        select(region_id = rgn_id,
-               score     = trend) %.%
-        mutate(dimension = 'trend')) %.%
-    mutate(goal='MAR')
-  
-  return(scores)
+  s.status = cbind(r.status, data.frame('dimension'='status'))
+  s.trend  = cbind(r.trend , data.frame('dimension'='trend' ))
+  scores = cbind(rbind(s.status, s.trend), data.frame('goal'='MAR'))
+  return(scores)  
 }
 
 FP = function(layers, scores){
