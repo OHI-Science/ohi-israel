@@ -34,7 +34,7 @@ Also note: the 12 warning messages that will appear are because of the LE data l
   - le_wage_sector_year
 
 
-## Install
+## Install: obsolete now, just here as reference
 
 To get the latest Ocean Health Index toolbox `ohicore` and Israel scenario files `ohi-israel` into your home folder `~/github` and launch the application, run the following in R:
 
