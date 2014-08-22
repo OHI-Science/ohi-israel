@@ -23,7 +23,7 @@ I found that the answer to the error was because of the NP entry in `resilience_
 
 **Please note:** This fix makes the Toolbox work correctly, however it will be important to review `pressures_matrix.csv` and `resilience_matrix.csv` and decide which pressures are appropriate for the modified NP goal. 
   
-**Next Steps:** [Download](https://github.com/OHI-Science/ohi-israel#install-alternative) this updated version of **ohi-israel** from GitHub, and overwrite the old folder `C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel`. The updated **ohi-israel** runs correctly with Israeli data incorporated. 
+**Next Steps:** [Download](https://github.com/OHI-Science/ohi-israel#install-alternative) this updated version of **ohi-israel** from GitHub, and overwrite the old folder `C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel`. The updated **ohi-israel** runs correctly with Israeli data incorporated. Use [launch_ohi-israel.r](https://github.com/OHI-Science/ohi-israel/blob/master/med2014/launch_ohi-israel.R) to launch the Toolbox.
   
 Also note: the 12 warning messages that will appear are because of the LE data layers that are empty, which will need to be addressed:
 
