@@ -23,9 +23,13 @@ I found that the answer to the error was because of the NP entry in `resilience_
 
 **Please note:** This fix makes the Toolbox work correctly, however it will be important to review `pressures_matrix.csv` and `resilience_matrix.csv` and decide which pressures are appropriate for the modified NP goal. 
   
-**Next Steps:** [Download](https://github.com/OHI-Science/ohi-israel#install-alternative) this updated version of **ohi-israel** from GitHub, and overwrite the old folder `C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel`. The updated **ohi-israel** runs correctly with Israeli data incorporated. 
+**Next Steps:**  
+
+1. [Download](https://github.com/OHI-Science/ohi-israel#install-alternative) this updated version of **ohi-israel** from GitHub, and overwrite the old folder `C:/Users/Lenovo/Google Drive/Maarag/Personal/Hila/ohi-israel`. The updated **ohi-israel** runs correctly with Israeli data incorporated. 
+2. [Download](https://github.com/OHI-Science/ohicore) the **ohicore** repository and save on your local machine in the same folder as ohi-israel.
+3. Use [launch_ohi-israel.r](https://github.com/OHI-Science/ohi-israel/blob/master/med2014/launch_ohi-israel.R) to launch the Toolbox. Be sure to set the file paths correctly for [ohicore](https://github.com/OHI-Science/ohi-israel/blob/master/med2014/launch_ohi-israel.R#L26) and for the [working directory](https://github.com/OHI-Science/ohi-israel/blob/master/med2014/launch_ohi-israel.R#L30). **launch_ohi-israel.r** will execute the proper setup and call calculate_scores.r, which runs the Toolbox. 
   
-Also note: the 12 warning messages that will appear are because of the LE data layers that are empty, which will need to be addressed:
+Also note: the 12 warning messages that will appear after running the Toolbox are because of the LE data layers that are empty, which will need to be addressed:
 
   - le_wage_cur_adj_value
   - le_wage_cur_base_value
@@ -34,53 +38,8 @@ Also note: the 12 warning messages that will appear are because of the LE data l
   - le_wage_sector_year
 
 
-## Install
+Note: old install instructions have been deleted; see an [older version](https://github.com/OHI-Science/ohi-israel/blob/a9c76a3f489f0e4582e2e5d3478d8bdbaa88eb86/README.md#install-obsolete-now-just-here-as-reference) of this README if interested. 
 
-To get the latest Ocean Health Index toolbox `ohicore` and Israel scenario files `ohi-israel` into your home folder `~/github` and launch the application, run the following in R:
-
-```r
-# remove old packages
-for (p in c('ohicore','ohigui','rCharts')){  
-  if (p %in% rownames(installed.packages())){
-    lib = subset(as.data.frame(installed.packages()), Package==p, LibPath, drop=T)
-    remove.packages(p, lib)  
-  }
-}
-
-# install dependencies
-for (p in c('devtools')){
-  if (!require(p, character.only=T)){
-    install.packages(p)
-    require(p, character.only=T)
-  }
-}
-
-# install github packages
-install_github('ohi-science/rCharts')
-install_github('ohi-science/ohicore')
-
-# define destination of ohi-israel scenario
-scenario = '~/ohi-israel/med2014'
-cat(sprintf('Writing https://github.com/ohi-science/ohi-israel to:\n  %s\n', 
-  suppressWarnings(normalizePath(dirname(scenario)))))
-    
-# get scenario
-library(ohicore)
-get_scenarios('ohi-science/ohi-israel', dirname(scenario))
-
-# write launch_app shortcuts specific to R path of operating system
-write_shortcuts(scenario)
-cat(sprintf('In future, you can launch app to scenario with:\n  %s\n', 
-  suppressWarnings(normalizePath(file.path(scenario, 'launch_app.*')))))
-
-# launch app (can use launch_app.* from inside scenario folder to launch in future)
-launch_app(scenario)
-```
-
-After the install you can double click on the appropriate launch_app.* (*.bat for Windows, *.command for Mac) inside the '~/ohi-israel/med2014' folder to open in future.
-
-### Install alternative
-\*\* As an alternative to `get_scenarios` in the install script above, you can use GitHub to commit changes to your local version, push commits up to github for offsite archiving, and eventually make a pull request to have those changes merged back to `ohi-science/ohi-israel`. See instructions for [accessing a repository](https://github.com/OHI-Science/ohimanual/blob/master/tutorials/accessing_a_repo/accessing_a_repo.md#accessing-github-repositories) with or without GitHub.
 
 ## Regions
 The 6 regions and ancillary buffers (offshore, offshore1km, offshore3nm, inland, inland1km, inland25km) were created at: 

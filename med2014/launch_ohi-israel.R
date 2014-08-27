@@ -1,6 +1,8 @@
 # launch_ohi-israel.R
 # prepare the toolbox for ohi-israel assessment
 
+# note: to run, also download the 'ohicore' repo and change the path below:
+
 # remove old packages
 for (p in c('ohicore','ohigui','rCharts')){  
   if (p %in% rownames(installed.packages())){
@@ -17,9 +19,11 @@ for (p in c('devtools')){
   }
 }
 
-# install ohicore
+# install rCharts
 install_github('ohi-science/rCharts')
-load_all('~/github/ohicore') 
+
+# set ohicore directory and install ohicore
+load_all('~/github/ohicore') # !! set this path after downloading and saving repo from github.com/OHI-Science/ohicore
 library(ohicore)
 
 # set working directory
