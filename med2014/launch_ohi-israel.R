@@ -35,3 +35,6 @@ source('calculate_scores.r') # runs local ohi-israel/med2014/calculate_scores.r
 
 # flower plots and table
 source('report.r')
+
+# view results in the Toolbox App
+source('launch_app_code.r')
