@@ -394,43 +394,6 @@ NP = function(layers){
   return(scores)  
 }
 
-CS = function(layers){
-  
-  # layers
-  lyrs = list('rk' = c('hab_health' = 'health',
-                       'hab_extent' = 'extent',
-                       'hab_trend'  = 'trend'))
-  lyr_names = sub('^\\w*\\.','', names(unlist(lyrs)))  
-  
-  # cast data
-  D = SelectLayersData(layers, layers=lyr_names)
-  rk = rename(dcast(D, id_num + category ~ layer, value.var='val_num', subset = .(layer %in% names(lyrs[['rk']]))),
-              c('id_num'='region_id', 'category'='habitat', lyrs[['rk']]))
-  
-  # limit to CS habitats
-  rk = subset(rk, habitat %in% c('mangrove','saltmarsh','seagrass'))
-  
-  # assign extent of 0 as NA
-  rk$extent[rk$extent==0] = NA
-  
-  # status
-  r.status = ddply(na.omit(rk[,c('region_id','habitat','extent','health')]), .(region_id), summarize,
-                   goal = 'CS',
-                   dimension = 'status',
-                   score = min(1, sum(extent * health) / sum(extent)) * 100)    
-  
-  # trend
-  r.trend = ddply(na.omit(rk[,c('region_id','habitat','extent','trend')]), .(region_id), summarize,
-                  goal = 'CS',
-                  dimension = 'trend',
-                  score = sum(extent * trend) / sum(extent) )
-
-  # return scores
-  scores = cbind(rbind(r.status, r.trend))
-  return(scores)  
-}
-
-
 CP = function(layers){
   
   # sum mangrove_offshore1km + mangrove_inland1km = mangrove to match with extent and trend
