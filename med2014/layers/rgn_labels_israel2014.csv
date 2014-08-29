@@ -1,7 +1,7 @@
-"rgn_id","type","label"
-1,"eez","הדרום"
-2,"eez","חיפה"
-3,"eez","מפרץ חיפה"
-4,"eez","המרכז"
-5,"eez","הצפון"
-6,"eez","תל אביב"
+rgn_id,type,label
+1,eez,Southern
+2,eez,Haifa
+3,eez,Haifa Bay
+4,eez,Center
+5,eez,Northern
+6,eez,Tel-Aviv
