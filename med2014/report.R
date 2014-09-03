@@ -109,6 +109,23 @@ for (rgn_id in rgns){ # rgn_id=0
                  max.length = 100, disk=0.4, label.cex=0.9, label.offset=0.155, cex=2.2, cex.main=2.5)
       dev.off()      
     }
+    
+    if (overwrite | !file.exists(fig_pdf)){
+      pdf(fig_pdf, width=res*7, height=res*7)
+      PlotFlower(main = rgn_name,
+                 lengths=x,
+                 widths=wts,
+                 fill.col=ifelse(is.na(x), 
+                                 'grey80', 
+                                 cols.goals.all[names(wts)]),
+                 labels  =ifelse(is.na(x), 
+                                 paste(goal_labels, '-', sep='\n'), 
+                                 paste(goal_labels, round(x), sep='\n')),
+                 center=round(weighted.mean(x, wts, na.rm=T)),
+                 max.length = 100, disk=0.4, label.cex=0.9, label.offset=0.155, cex=2.2, cex.main=2.5)
+      dev.off()      
+    }
+    
   }
   
   # table md
