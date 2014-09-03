@@ -395,25 +395,8 @@ NP = function(layers){
 }
 
 CP = function(layers){
-  
-  # sum mangrove_offshore1km + mangrove_inland1km = mangrove to match with extent and trend
-  m = layers$data[['hab_extent']] %>%
-    filter(habitat %in% c('mangrove_inland1km','mangrove_offshore1km'))
-  if (nrow(m)>0){
-    m = m %>%
-      group_by(rgn_id) %>%
-      summarize(km2 = sum(km2, na.rm=T)) %>%
-      mutate(habitat='mangrove') %>%
-      ungroup() %>%
-      select(rgn_id, habitat, km2)
-  } else{
-    m = m %>%
-      mutate(
-        km2 = NA) %>%
-      select(rgn_id, habitat, km2)
-  }
-  
-  
+  # Israel: CP goal includes rocky reef and sand dunes
+
   # get layer data
   d = 
     join_all(
@@ -427,9 +410,7 @@ CP = function(layers){
         # for habitat extent
         rbind_list(
           
-          # do not use all mangrove
           layers$data[['hab_extent']] %>%
-            filter(!habitat %in% c('mangrove','mangrove_inland1km','mangrove_offshore1km')) %>%
             select(rgn_id, habitat, km2),
           
           m)),
@@ -437,12 +418,9 @@ CP = function(layers){
       by=c('rgn_id','habitat'), type='full') %>% 
     select(rgn_id, habitat, km2, health, trend)
   
-  # limit to CP habitats and add rank
-  habitat.rank = c('coral'            = 4,
-                   'mangrove'         = 4,
-                   'saltmarsh'        = 3,
-                   'seagrass'         = 1,
-                   'seaice_shoreline' = 4)
+  # set ranks for CP habitats 
+  habitat.rank = c('rocky_reef'  = 4,
+                   'sand_dunes'  = 4)
   
   d = d %>%
     filter(habitat %in% names(habitat.rank)) %>%
@@ -890,6 +868,10 @@ CW = function(layers){
 
 
 HAB = function(layers){
+  # email from Anat: For the rocky reef we only have the areal
+  # extent of reef. We did not succeed in composing a proxy for this habitat
+  # condition, so we decided to remove it from the HAB subgoal. We remain with
+  # the sand dunes, and softbottom
   
   # get layer data
   d = 
@@ -910,7 +892,7 @@ HAB = function(layers){
   
   # limit to habitats used for HAB, create extent presence as weight
   d = d %>%
-    filter(habitat %in% c('coral','mangrove','saltmarsh','seaice_edge','seagrass','soft_bottom')) %>%    
+    filter(habitat %in% c('sand_dunes', 'soft_bottom')) %>%    
     mutate(
       w  = ifelse(!is.na(extent) & extent > 0, 1, NA)) %>%
     filter(!is.na(w)) %>%
