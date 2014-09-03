@@ -529,8 +529,8 @@ TR = function(layers, year_max){
   
 }
 
-LIV_ECO = function(layers){
-  
+LIV_ECO = function(layers, subgoal){
+#   browser()
   # gdp, wages, and jobs data (israel: this is dummy data)
   le_gdp   = SelectLayersData(layers, layers='le_gdp')  %>%
     select(rgn_id = id_num, year, usd = val_num)
@@ -641,7 +641,7 @@ LIV_ECO = function(layers){
   liv_trend  = cbind(l.trend , data.frame('dimension'='trend' ))
   scores_LIV = cbind(rbind(liv_status, liv_trend), data.frame('goal'='LIV'))
   
-  # Israel: are therey any data to correct these marine data with 'national [non-marine-only]
+  # Israel: are there any data to correct these marine data with 'national [non-marine-only]
   # trends in employment rates, average wages, and GDP, respectively'? (p. 29 of SOM)
     
   ## ECO
@@ -653,7 +653,7 @@ LIV_ECO = function(layers){
     select(rgn_id, year, rev_adj)
   
   # reference points for rev
-  # revenue reworded from SOM p. 26-27 (se above for jobs)
+  # revenue reworded from SOM p. 26-27 (see above for jobs)
   rev_ref = eco %>%
     # Partial rolling mean with width 5. Note that na.rm=F since otherwise would populate prior to first year 
     mutate(rev_adj_ref = rollapply(rev_adj, width=5, FUN=mean, align='center', partial=T, na.rm=F)) %>%
@@ -683,10 +683,23 @@ LIV_ECO = function(layers){
   scores_ECO = cbind(rbind(eco_status, eco_trend), data.frame('goal'='ECO'))
   
   
-  # combine LIV and ECO scores
-  scores = rbind(scores_LIV, scores_ECO)
-  
-  return(scores)
+  # report LIV and ECO scores separately
+  if (subgoal=='LIV'){
+    d = scores_LIV %>%
+      select(
+        region_id = rgn_id,
+        score     = value,
+        dimension, goal)
+  } else {
+    d = scores_ECO %>%
+      select(
+        region_id = rgn_id,
+        score     = value,
+        dimension, goal)
+  }
+
+  return(d)
+
 }
 
 LE = function(scores, layers){
