@@ -111,7 +111,7 @@ for (rgn_id in rgns){ # rgn_id=0
     }
     
     if (overwrite | !file.exists(fig_pdf)){
-      pdf(fig_pdf, width=res*7, height=res*7)
+      pdf(fig_pdf, width=7, height=7)
       PlotFlower(main = rgn_name,
                  lengths=x,
                  widths=wts,
