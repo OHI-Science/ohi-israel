@@ -618,19 +618,19 @@ LIV_ECO = function(layers, subgoal){
       # across sectors, wages are averaged
       wages_avg = mean(wages_adj, na.rm=T)) %>%
     # reference for jobs [j]: value in the current year (or most recent year) [c], relative to the value in a recent moving reference period [r] defined as 5 years prior to [c]
-    arrange(rgn_id, year) %>%
+    as.data.frame() %>%
     group_by(rgn_id) %>%
     mutate(
-      jobs_ref  = first(jobs_sum)) %>%
+      jobs_first  = first(jobs_sum, order_by=year)) %>%
     # reference for wages [w]: target value for average annual wages is the highest value observed across all reporting units
     group_by(year) %>%
     mutate(
-      wages_ref = max(wages_avg)) %>%
+      wages_max = max(wages_avg)) %>%
     # calculate final scores
     ungroup() %>%
     mutate(
-      x_jobs  = jobs_sum / jobs_ref,
-      x_wages = wages_avg / wages_ref,
+      x_jobs  = jobs_sum / jobs_first,
+      x_wages = wages_avg / wages_max,
       x_liv   = mean(c(x_jobs, x_wages), na.rm=T) * 100)
 
   # debug
@@ -709,11 +709,11 @@ LIV_ECO = function(layers, subgoal){
     arrange(rgn_id, year) %>%
     group_by(rgn_id) %>%
     mutate(
-      rev_ref  = first(rev_sum)) %>%
+      rev_first  = first(rev_sum)) %>%
     # calculate final scores
     ungroup() %>%
     mutate(
-      x_eco  = pmin(rev_sum / rev_ref, 1) * 100)
+      x_eco  = pmin(rev_sum / rev_first, 1) * 100)
 
   write.csv(eco_status, 'temp/eco_status.csv', row.names=F, na='')
 
@@ -743,16 +743,16 @@ liv_status = liv %>%
   arrange(rgn_id, year) %>%
   group_by(rgn_id) %>%
   mutate(
-    jobs_ref  = first(jobs_sum)) %>%
+    jobs_first  = first(jobs_sum)) %>%
   # reference for wages [w]: target value for average annual wages is the highest value observed across all reporting units
   group_by(year) %>%
   mutate(
-    wages_ref = max(wages_avg))
+    wages_max = max(wages_avg))
 # calculate final scores
 ungroup() %>%
   mutate(
-    x_jobs  = jobs_sum / jobs_ref,
-    x_wages = wages_avg / wages_ref,
+    x_jobs  = jobs_sum / jobs_first,
+    x_wages = wages_avg / wages_max,
     x_liv   = mean(c(x_jobs, x_wages), na.rm=T) * 100)
 
 
