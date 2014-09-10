@@ -1,15 +1,1 @@
-goal,component,alien_species,cites,fishing_v1,fishing_v1_eez,fishing_v2_eez,fishing_v3,fishing_v3_eez,habitat,habitat_combo,habitat_combo_eez,li_gci,li_sector_evenness,mariculture,msi_gov,species_diversity,species_diversity_3nm,tourism,water,wgi_all
-AO,,,,fishing_v1,,,,,,habitat_combo,,,,,,,species_diversity_3nm,,,wgi_all
-HAB,sand_dunes only,alien_species,,,,,,,,habitat_combo,,,,,msi_gov,,species_diversity_3nm,tourism,water,wgi_all
-HAB,,alien_species,,fishing_v1,,,,,,habitat_combo,,,,mariculture,msi_gov,,species_diversity_3nm,,water,wgi_all
-SPP,,alien_species,cites,,,fishing_v2_eez,,,,,habitat_combo_eez,,,mariculture,,,,tourism,water,wgi_all
-CW,,,,,,,,,,,,,,,,,,,water,wgi_all
-FIS,,,,,,fishing_v2_eez,,,,,habitat_combo_eez,,,,,species_diversity,,,,wgi_all
-MAR,,,,,,,,,,,,,,mariculture,msi_gov,,,,water,wgi_all
-ECO,,,,,,,,,,,,li_gci,,,,,,,,wgi_all
-LIV,,,,,,,,,,,,li_gci,li_sector_evenness,,,,,,,wgi_all
-NP,,,,,,,,,,,,,,,,,,,,wgi_all
-CP,,alien_species,,,,,,,,habitat_combo,,,,,msi_gov,,species_diversity_3nm,tourism,water,wgi_all
-ICO,,,cites,,,fishing_v2_eez,,,,,habitat_combo_eez,,,,,species_diversity,,,water,wgi_all
-LSP,,,,,,,,,habitat,,,,,,,,,,water,wgi_all
-TR,,,,,,,,,,,,,,,,,,,water,wgi_all
+goal,component,alien_species,cites,fishing_v1,fishing_v1_eez,fishing_v2_eez,fishing_v3,fishing_v3_eez,habitat,habitat_combo,habitat_combo_eez,li_gci,li_sector_evenness,mariculture,msi_gov,species_diversity,species_diversity_3nm,tourism,water,wgi_allAO,,,,fishing_v1,,,,,,habitat_combo,,,,,,,species_diversity_3nm,,,wgi_allHAB,sand_dunes only,alien_species,,,,,,,,habitat_combo,,,,,,,species_diversity_3nm,tourism,water,wgi_allHAB,,alien_species,,fishing_v1,,,,,,habitat_combo,,,,mariculture,msi_gov,,species_diversity_3nm,,water,wgi_allSPP,,alien_species,cites,,,fishing_v2_eez,,,,,habitat_combo_eez,,,mariculture,,,,tourism,water,wgi_allCW,,,,,,,,,,,,,,,,,,,water,wgi_allFIS,,,,,,fishing_v2_eez,,,,,habitat_combo_eez,,,,,species_diversity,,,,wgi_allMAR,,,,,,,,,,,,,,mariculture,msi_gov,,,,water,wgi_allECO,,,,,,,,,,,,li_gci,,,,,,,,wgi_allLIV,,,,,,,,,,,,li_gci,li_sector_evenness,,,,,,,wgi_allNP,,,,,,,,,,,,,,,,,,,,wgi_allCP,,alien_species,,,,,,,,habitat_combo,,,,,,,,tourism,,wgi_allICO,,,cites,,,fishing_v2_eez,,,,,habitat_combo_eez,,,,,species_diversity,,,water,wgi_allLSP,,,,,,,,,habitat,,,,,,,,,,water,wgi_allTR,,,,,,,,,,,,,,,,,,,water,wgi_all
