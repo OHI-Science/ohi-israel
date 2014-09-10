@@ -1,14 +1,21 @@
-# presume that working directory in current scenario directory, eg: setwd('~/github/ohi-israel/med2014')
+#library(devtools)
+#load_all('~/github/ohicore')
+#devtools::install('~/github/ohicore')
+suppressWarnings(library(ohicore))
+
+# presume that working directory in current scenario directory, eg:
+setwd('~/github/ohi-israel/med2014')
 
 # load conf
 conf = Conf('conf')
 
+#cat(sprintf('DEBUG calculate_scores.R:32, fxn environment summarize: %s\n', environmentName(environment(summarize)) ))
+
 # run checks on layers
-CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields) 
+#CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
 
 # load layers
-layers = Layers('layers.csv', 'layers') 
-# source(fix_empty_layers.r) # run if there are errors about empty files '...has no rows of data'
+layers = Layers('layers.csv', 'layers')
 
 # calculate scores
 scores = CalculateAll(conf, layers, debug=F)

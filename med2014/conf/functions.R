@@ -10,10 +10,11 @@ Setup = function(){
       require(p, character.only=T)
     }
   }
+  
 }
 
 FIS = function(layers, status_year=2011){
-  
+    
   # layers used: fis_meancatch, fis_b_bmsy, fis_proparea_saup2rgn
   
   # catch data
@@ -23,7 +24,7 @@ FIS = function(layers, status_year=2011){
       taxon_name_key = category,
       year,
       catch          = val_num)  
-  
+
   # separate out the region ids:
   c$fao_id    <- as.numeric(sapply(strsplit(as.character(c$fao_saup_id), "_"), function(x)x[1]))
   c$saup_id   <- as.numeric(sapply(strsplit(as.character(c$fao_saup_id), "_"), function(x)x[2]))
@@ -206,7 +207,7 @@ FIS = function(layers, status_year=2011){
 }
 
 MAR = function(layers){
-  
+    
   # status
   r.status = rename(SelectLayersData(layers, layers='rn_mar_status', narrow=T), c('id_num'='region_id','val_num'='score'))
   r.status$score = r.status$score * 100
@@ -218,7 +219,7 @@ MAR = function(layers){
   s.status = cbind(r.status, data.frame('dimension'='status'))
   s.trend  = cbind(r.trend , data.frame('dimension'='trend' ))
   scores = cbind(rbind(s.status, s.trend), data.frame('goal'='MAR'))
-  return(scores)  
+  return(scores)
 }
 
 FP = function(layers, scores){
@@ -349,7 +350,7 @@ AO = function(layers,
 
 # Hila, 27/4/14, Changes to Natural products to use desalination only as product (see IsraelUpdate documentation)
 NP = function(layers){
-  
+
   # layers
   lyrs = list('rky' = c('rnky_np_desal_relative'    = 'w'), # Desalination score (relative to a target value)
               'rk'  = c('rnk_np_sustainability_score' = 'S')) # Sustainability score
@@ -397,7 +398,7 @@ NP = function(layers){
 CP = function(layers){
   # Israel: CP goal includes rocky reef and sand dunes
   # layer data is currently either global data applied to all regions, or is set to 1 or 0 as placeholders. 
-  
+
   # get layer data
   d = 
     join_all(
@@ -414,37 +415,37 @@ CP = function(layers){
       by=c('rgn_id','habitat'), type='full') %>% 
     select(rgn_id, habitat, km2, health, trend)
   
- # set ranks for CP habitats 
-    habitat.rank = c('rocky_reef'  = 1, # Israel: need to set these habitat ranks
-                     'sand_dunes'  = 2)
+  # set ranks for CP habitats 
+  habitat.rank = c('rocky_reef'  = 1, # Israel: need to set these habitat ranks
+                   'sand_dunes'  = 2)
     
-    d = d %>%
-      filter(habitat %in% names(habitat.rank)) %>%
-      mutate(
-        rank = habitat.rank[habitat],
-        extent = ifelse(km2==0, NA, km2))
+  d = d %>%
+    filter(habitat %in% names(habitat.rank)) %>%
+    mutate(
+      rank = habitat.rank[habitat],
+      extent = ifelse(km2==0, NA, km2))
     
-    scores_CP = rbind_list(
-      # status
-      d %>% 
-        filter(!is.na(rank) & !is.na(health) & !is.na(extent)) %>%
-        group_by(rgn_id) %>%
-        summarize(      
-          score = pmin(1, sum(rank * health * extent) / (sum(extent) * max(rank)) ) * 100,
-          dimension = 'status'),
-      # trend
-      d %>% 
-        filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
-        group_by(rgn_id) %>%
-        summarize(      
-          score = sum(rank * trend * extent) / (sum(extent)* max(rank)),
-          dimension = 'trend')) %>%
-      mutate(
-        goal = 'CP') %>%
-      select(region_id=rgn_id, goal, dimension, score)
+  scores_CP = rbind_list(
+    # status
+    d %>% 
+      filter(!is.na(rank) & !is.na(health) & !is.na(extent)) %>%
+      group_by(rgn_id) %>%
+      summarize(      
+        score = pmin(1, sum(rank * health * extent) / (sum(extent) * max(rank)) ) * 100,
+        dimension = 'status'),
+    # trend
+    d %>% 
+      filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
+      group_by(rgn_id) %>%
+      summarize(      
+        score = sum(rank * trend * extent) / (sum(extent)* max(rank)),
+        dimension = 'trend')) %>%
+    mutate(
+      goal = 'CP') %>%
+    select(region_id=rgn_id, goal, dimension, score)
     
-    # return scores
-    return(scores_CP)
+  # return scores
+  return(scores_CP)
   d = data.frame(region_id=1:6, goal = 'CP', dimension='blank', score=1:6)
 }
 
@@ -507,6 +508,18 @@ TR = function(layers, year_max){
 
 LIV_ECO = function(layers, subgoal){
   
+  # DEBUG inside
+  #devtools::install('~/github/ohicore')
+  suppressWarnings(library(ohicore))
+  #devtools::load_all('~/github/ohicore')
+  setwd('~/github/ohi-israel/med2014')
+  conf   = Conf('conf')
+  options(warn=0)
+  #CheckLayers('layers.csv', 'layers', flds_id=conf$config$layers_id_fields)
+  layers = Layers('layers.csv', 'layers')
+  scores = read.csv('scores.csv')  
+  subgoal='LIV'
+  
   ## read in all data:
   
   # gdp, wages, jobs and workforce_size data (israel: this is dummy data)
@@ -529,13 +542,13 @@ LIV_ECO = function(layers, subgoal){
   #   le_unemployment   = read.csv('layers/le_unemployment_israel2014.csv')
   
   # multipliers from Table S10 (Halpern et al 2012 SOM)
-  multipliers_jobs = data.frame('sector' = c('mar', 'tour'), 'multiplier' = c(1.973, 1)) # no multiplers for tour (=1)
+  multipliers_jobs = data.frame('sector' = c('mar', 'tour'), 'multiplier' = c(2.7, 1)) # no multiplers for tour (=1)
   # multipliers_rev  = data.frame('sector' = c('mar', 'tour'), 'multiplier' = c(1.59, 1)) # not used because GDP data is not by sector
   
   # account for inflation: Consumer Price Index convert to 2010 US Dollars (as in global assessment)
-  cpi_2010 = read.csv('tmp/cpi_osu.csv')   
+  cpi_2010 = read.csv('tmp/cpi_osu.csv') # to convert amounts to a common year based on global inflation
   
-  # convert from NIS to USD: http://www.xe.com/currencytables/
+  # convert from NIS (aka ILS) to USD: http://www.xe.com/currencytables/
   nis_to_usd = read.csv('tmp/nis_to_usd_xedotcom.csv')
   
   # don't need to account for ppp (purchasing power parity) because not comparing across countries
@@ -562,7 +575,6 @@ LIV_ECO = function(layers, subgoal){
   
   ## LIV israel
   liv = 
-    
     # adjust jobs
     le_jobs %>%
     left_join(multipliers_jobs, by = 'sector') %>%
@@ -582,88 +594,196 @@ LIV_ECO = function(layers, subgoal){
         select(rgn_id, year, sector, wages_adj),
       # adjust for national wages if data are available
       
-      by = c('rgn_id', 'year', 'sector')) # left_join le_jobs and le_wages
+      by = c('rgn_id', 'year', 'sector')) %>% # left_join le_jobs and le_wages
+    arrange(year, sector, rgn_id)
   
+  # debug
+  write.csv(liv, 'temp/liv.csv', row.names=F, na='')
   
   ## LIV calculations
    
   # LIV status
-  l.status = liv %>%
-    filter(!is.na(jobs_adj)) %>%
+  liv_status = liv %>%
+    # debug: overwrite with random values differing across regions, years and sectors to see effect of group_by calculations
+    # mutate(
+    #   jobs_adj  = sample(seq(1,1000), nrow(liv)),
+    #   wages_adj = sample(seq(1,1000), nrow(liv))) %>%
+    filter(!is.na(jobs_adj) & !is.na(wages_adj)) %>%
     filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+    # summarize across sectors
     group_by(rgn_id, year) %>%
-    summarize(x_jobs  = pmin(sum(jobs_adj, na.rm=T)   / max(jobs_adj, na.rm=T), 1), # pmin caps at 1. max(jobs_adj) is the ref point
-              x_wages = pmin(mean(wages_adj, na.rm=T) / first(wages_adj), 1),   # first(wages_adj) is the ref point
-              x_liv    = (x_jobs + x_wages)/2) %>%
+    summarize(
+      # across sectors, jobs are summed
+      jobs_sum  = sum(jobs_adj, na.rm=T),
+      # across sectors, wages are averaged
+      wages_avg = mean(wages_adj, na.rm=T)) %>%
+    # reference for jobs [j]: value in the current year (or most recent year) [c], relative to the value in a recent moving reference period [r] defined as 5 years prior to [c]
+    arrange(rgn_id, year) %>%
+    group_by(rgn_id) %>%
+    mutate(
+      jobs_ref  = first(jobs_sum)) %>%
+    # reference for wages [w]: target value for average annual wages is the highest value observed across all reporting units
+    group_by(year) %>%
+    mutate(
+      wages_ref = max(wages_avg)) %>%
+    # calculate final scores
+    ungroup() %>%
+    mutate(
+      x_jobs  = jobs_sum / jobs_ref,
+      x_wages = wages_avg / wages_ref,
+      x_liv   = mean(c(x_jobs, x_wages), na.rm=T) * 100)
+
+  # debug
+  write.csv(liv_status, 'temp/liv_status.csv', row.names=F, na='')
+
+  liv_status = liv_status %>%
     filter(year == max(year, na.rm=T)) %>%
-    select(rgn_id, value = x_liv)
-  #     head(l.status); summary(l.status)
+    select(rgn_id, score = x_liv) %>%
+    mutate(dimension = 'status')
+
+#     head(liv_status); summary(liv_status)
   
   # LIV trend
-  # From SOM p. 29: ' trend was calculated as the slope in the individual sector values (not summed sectors) 
-  # over the most recent five years'
+  # From SOM p. 29: trend was calculated as the slope in the individual sector values (not summed sectors)
+  # over the most recent five years... with the average weighted by the number of jobs in each sector
+  # ... averaging slopes across sectors weighted by the revenue in each sector
+
+  # get trend across years as slope of individual sectors for jobs and wages
+  liv_metric_trend = liv %>%
+    filter(!is.na(jobs_adj) & !is.na(wages_adj)) %>%
+    filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago 
+    group_by(sector) %>%
+    mutate(
+      weight = sum(jobs_adj, na.rm=T)) %>%
+    reshape2::melt(id=c('rgn_id','year','sector','weight'), variable='metric') %>%
+    mutate(
+      sector = as.character(sector),
+      metric = as.character(metric)) %>%
+    group_by(metric, rgn_id, sector, weight) %>%
+    do(mdl = lm(value ~ year, data=.)) %>%
+    summarize(
+      metric = metric,
+      weight = weight,
+      rgn_id = rgn_id,
+      sector = sector,
+      sector_trend = max(-1, min(1, coef(mdl)[['year']] * 4))) %>%
+    group_by(rgn_id) %>%
+    summarize(
+      trend = weighted.mean(sector_trend)
   
-  l.trend = liv %>%
-    filter(!is.na(jobs_adj)) %>%
-    filter(year >= max(year, na.rm=T) - 4 ) %>% # 5 year trend
+  liv_trend = liv_metric_trend %>%
+    filter(!is.na(jobs_adj) & !is.na(wages_adj)) %>%
+    filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago 
+    # get metric weights as total jobs per sector
+    group_by()
+  
+
     group_by(rgn_id, sector) %>%
+# TODO: do(mdl= lm(...)) per ohi-global/eez2013/functions.R#L1306 ...
     summarize(x_jobs  = pmin(sum(jobs_adj, na.rm=T) / first(jobs_adj),1), # pmin caps at 1
               x_wages = (mean(wages_adj, na.rm=T)  / mean(wages_adj, na.rm=T)),
               x_liv    = (x_jobs + x_wages)/2) %>%
     summarize(trend = last(x_liv) - first(x_liv)) %>%
-    select(rgn_id, value = trend)
+    select(rgn_id, score = trend) %>%
+    mutate(dimension = 'trend')
   
   # LIV formatting
-  liv_status = cbind(l.status, data.frame('dimension'='status'))
-  liv_trend  = cbind(l.trend , data.frame('dimension'='trend' ))
-  scores_LIV = cbind(rbind(liv_status, liv_trend), data.frame('goal'='LIV'))
-  
-  
+  scores_LIV = rbind(liv_status, liv_trend) %>%
+    mutate(goal='LIV')
+    
   ## ECO calculations
-  eco = 
-    le_gdp %>%
+  eco = le_gdp %>%
     mutate(rev_adj = usd) %>% 
     # adjust rev with national GDP rates if available. Example: (rev_adj = usd / ntl_gdp) 
     select(rgn_id, year, rev_adj)
   
-  
   # ECO status
-  e.status = eco %>%
+  eco_status = eco %>%
     filter(!is.na(rev_adj)) %>%
     filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+    # across sectors, revenue is summed
     group_by(rgn_id, year) %>%
-    summarize(x_eco  = pmin(sum(rev_adj, na.rm=T) / first(rev_adj), 1)) %>% # pmin caps at 1
+    summarize(
+      rev_sum  = sum(rev_adj, na.rm=T)) %>%
+    # reference for revenue [e]: value in the current year (or most recent year) [c], relative to the value in a recent moving reference period [r] defined as 5 years prior to [c]  
+    arrange(rgn_id, year) %>%
+    group_by(rgn_id) %>%
+    mutate(
+      rev_ref  = first(rev_sum)) %>%
+    # calculate final scores
+    ungroup() %>%
+    mutate(
+      x_eco  = pmin(rev_sum / rev_ref, 1) * 100)
+
+  write.csv(eco_status, 'temp/eco_status.csv', row.names=F, na='')
+
+      x_eco  = pmin(sum(rev_adj, na.rm=T) / first(rev_adj), 1) * 100) %>% # pmin caps at 1
     filter(year == max(year, na.rm=T)) %>%
-    select(rgn_id, value = x_eco)
+    select(rgn_id, score = x_eco) %>%
+    mutate(dimension = 'status')
   
+  
+
+# LIV status
+liv_status = liv %>%
+  # debug: overwrite with random values differing across regions, years and sectors to see effect of group_by calculations
+  # mutate(
+  #   jobs_adj  = sample(seq(1,1000), nrow(liv)),
+  #   wages_adj = sample(seq(1,1000), nrow(liv))) %>%
+  filter(!is.na(jobs_adj) & !is.na(wages_adj)) %>%
+  filter(year >= max(year, na.rm=T) - 4) %>% # reference point is 5 years ago
+  # summarize across sectors
+  group_by(rgn_id, year) %>%
+  summarize(
+    # across sectors, jobs are summed
+    jobs_sum  = sum(jobs_adj, na.rm=T),
+    # across sectors, wages are averaged
+    wages_avg = mean(wages_adj, na.rm=T)) %>%
+  # reference for jobs [j] and revenue [e]: value in the current year (or most recent year) [c], relative to the value in a recent moving reference period [r] defined as 5 years prior to [c]
+  arrange(rgn_id, year) %>%
+  group_by(rgn_id) %>%
+  mutate(
+    jobs_ref  = first(jobs_sum)) %>%
+  # reference for wages [w]: target value for average annual wages is the highest value observed across all reporting units
+  group_by(year) %>%
+  mutate(
+    wages_ref = max(wages_avg))
+# calculate final scores
+ungroup() %>%
+  mutate(
+    x_jobs  = jobs_sum / jobs_ref,
+    x_wages = wages_avg / wages_ref,
+    x_liv   = mean(c(x_jobs, x_wages), na.rm=T) * 100)
+
+
+
   # ECO trend
-  e.trend = eco %>%
+  eco_trend = eco %>%
     filter(!is.na(rev_adj)) %>%
     filter(year >= max(year, na.rm=T) - 4 ) %>% # 5 year trend
     group_by(rgn_id, year) %>%
     summarize(x_eco  = pmin(sum(rev_adj, na.rm=T) / first(rev_adj), 1)) %>% # pmin caps at 1
     group_by(rgn_id) %>%          
     summarize(trend = last(x_eco) - first(x_eco)) %>%
-    select(rgn_id, value = trend)
+    select(rgn_id, score = trend) %>%
+    mutate(dimension = 'trend')
   
   # formatting
-  eco_status = cbind(e.status, data.frame('dimension'='status'))
-  eco_trend  = cbind(e.trend , data.frame('dimension'='trend' ))
-  scores_ECO = cbind(rbind(eco_status, eco_trend), data.frame('goal'='ECO'))
-  
+  scores_ECO = rbind(eco_status, eco_trend) %>%
+    mutate(goal='ECO')
   
   # report LIV and ECO scores separately
   if (subgoal=='LIV'){
     d = scores_LIV %>%
       select(
         region_id = rgn_id,
-        score     = value,
+        score,
         dimension, goal)
   } else {
     d = scores_ECO %>%
       select(
         region_id = rgn_id,
-        score     = value,
+        score,
         dimension, goal)
   }
   
