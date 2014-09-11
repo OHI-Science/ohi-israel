@@ -1,7 +1,8 @@
 ohi-israel: Israel's Ocean Health Index
 ==========
 
-## OHI Toolbox App with Israel Scenario
+## OHI Toolbox App with Israel Scenario  
+
 
 The OHI toolbox loaded with the Israel scenario layers initially looks like this in your web browser when launched:
 
