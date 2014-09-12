@@ -1,4 +1,10 @@
-# You should only have to run this install script once. Thereafter, you can run update.R.
+# This script installs:
+# - ohicore R library with core functions and interactive application
+#   [https://github.com/ohi-science/ohicore]
+# - ohi-israel files with all data specific to Israel 
+#   and launch_app.* to launch the application populated with Israel data and scores
+#   [https://github.com/ohi-science/ohi-israel]
+# - all R libraries upon which ohicore depends
 
 # check base R version
 if (as.integer(R.Version()$major) < 3){
