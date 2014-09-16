@@ -3,4 +3,5 @@
 .RData
 README.html
 **/launch_app.*
+**/calculate_scores.R
 **/.~lock*
