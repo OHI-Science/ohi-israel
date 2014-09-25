@@ -18,9 +18,9 @@ source('prep_layers/prep_le_aqua.r')
 
 f_corrected = read.csv(file.path(dir_prep,'hotel_jobs_right.csv')) # ensure this is the appropriate file. 
 
-write.csv(f_corrected %>%
-            select(rgn_id, year, count = hotel_jobs_n), 
-          file.path('layers', 'le_
+# write.csv(f_corrected %>%
+#             select(rgn_id, year, count = hotel_jobs_n), 
+#           file.path('layers', 'le_
 
 
 

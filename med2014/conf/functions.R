@@ -1,15 +1,18 @@
 Setup = function(){
   
-  extra.packages.required = c('zoo') # zoo for MAR(), NP()
+#   extra.packages.required = c('zoo') # zoo for MAR(), NP()
+#   
+#   # install packages if needed
+#   for (p in extra.packages.required){
+#     if (!suppressWarnings(library(p, character.only=T, logical.return=T))){
+#       cat(sprintf('\n\nInstalling %s...\n', p))
+#       install.packages(p)
+#       require(p, character.only=T)
+#     }
+#   }
   
-  # install packages if needed
-  for (p in extra.packages.required){
-    if (!suppressWarnings(library(p, character.only=T, logical.return=T))){
-      cat(sprintf('\n\nInstalling %s...\n', p))
-      install.packages(p)
-      require(p, character.only=T)
-    }
-  }
+  require(zoo)
+  
 }
 
 FIS = function(layers, status_year=2010){
