@@ -47,8 +47,9 @@ wts = with(subset(conf$goals, !goal %in% goals_supra, c(goal, weight)), setNames
 goal_labels = gsub('\\n', '\n', with(conf$goals, setNames(name_flower, goal))[names(wts)], fixed=T)
 
 # region names, ordered by GLOBAL and alphabetical
-rgn_names = rename(SelectLayersData(layers, layers=conf$config$layer_region_labels, narrow=T), 
-                   c('id_num'='region_id', 'val_chr'='rgn_name'))[,c('region_id','rgn_name')]
+rgn_names = SelectLayersData(layers, layers=conf$config$layer_region_labels, narrow=T) %>%
+  select(region_id = id_num, 
+         rgn_name  = val_chr)
 rgn_names = rbind(data.frame(region_id=0, rgn_name='ISRAEL'), 
                   arrange(rgn_names, rgn_name))
 
