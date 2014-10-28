@@ -1,6 +1,8 @@
 # Ocean Health Index Report
 # 'Israel' is the name of the entire study area: it is all 6 regions combined
 
+library(dplyr)
+
 # options:
 overwrite  = T
 israel_only= F
