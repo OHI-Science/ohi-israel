@@ -1,5 +1,6 @@
 # load required libraries
-suppressWarnings(require(ohicore))
+# suppressWarnings(require(ohicore))
+devtools::load_all('~/github/ohicore')
 
 # set working directory to the scenario directory, ie containing conf and layers directories
 setwd('~/github/ohi-israel/med2014')
