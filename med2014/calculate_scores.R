@@ -17,3 +17,5 @@ layers = Layers('layers.csv', 'layers')
 # calculate scenario scores
 scores = CalculateAll(conf, layers, debug=F)
 write.csv(scores, 'scores.csv', na='', row.names=F)
+
+source('report.r')
