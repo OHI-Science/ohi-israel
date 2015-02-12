@@ -5,9 +5,9 @@ rgn_id,habitat,trend
 2,sand_dunes,-0.007677335
 3,sand_dunes,-0.011270057
 6,sand_dunes,-0.013000201
-1,soft_bottom,-0.009038126
-4,soft_bottom,-0.009038126
-5,soft_bottom,-0.009038126
-2,soft_bottom,-0.009038126
-3,soft_bottom,-0.009038126
-6,soft_bottom,-0.009038126
+1,soft_bottom,0.003
+4,soft_bottom,0.003
+5,soft_bottom,0.003
+2,soft_bottom,0.003
+3,soft_bottom,0.003
+6,soft_bottom,0.003
