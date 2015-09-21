@@ -7,7 +7,7 @@ output: html_document
 
 In the table below, scores from both assessments displayed with the differences between them (Global - Israel).  
 
-To view the same table with differences colored from blue to red, view the [comparison table online](https://rawgit.com/OHI-Science/ohi-israel/draft/med2014/reports/compare_scores_OHIplus_global.html). Online, the differences are colored with dark blue indicating the largest positive difference and red indicating the largest negative difference. (Note: to update this link, knit this file by clicking the 'Knit HTML' button above and push changes). 
+To view the same table with differences colored from blue to red, view the [comparison table online](https://rawgit.com/OHI-Science/ohi-israel/master/med2014/reports/compare_scores_OHIplus_global.html). Online, the differences are colored with dark blue indicating the largest positive difference and red indicating the largest negative difference. (Note: to update this link, knit this file by clicking the 'Knit HTML' button above and push changes). 
 
 ```{r, echo=F, message=F}
 
