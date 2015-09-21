@@ -8,3 +8,4 @@ View the table of scores [here](https://rawgit.com/OHI-Science/ohi-israel/master
 
 
 Note: to update the information displayed in the link, run `ohi-israel/med2014/reports/compare_OHIplus_global.R` locally and push to GitHub. 
+
