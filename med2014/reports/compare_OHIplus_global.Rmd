@@ -1,0 +1,80 @@
+---
+title: "Global vs. Local Scores Comparison"
+output: html_document
+---
+
+**This report compares OHI scores for Israel from the 2014 Global Assessment with OHI+ scores for Israel.**
+
+In the table below, scores from both assessments displayed with the differences between them (Global - Israel).  
+
+To view the same table with differences colored from blue to red, view the [comparison table online](https://rawgit.com/OHI-Science/ohi-israel/draft/med2014/reports/compare_scores_OHIplus_global.html). Online, the differences are colored with dark blue indicating the largest positive difference and red indicating the largest negative difference. (Note: to update this link, knit this file by clicking the 'Knit HTML' button above and push changes). 
+
+```{r, echo=F, message=F}
+
+# setup
+
+# libraries
+library(dplyr)
+library(knitr)
+library(RColorBrewer)  # install.packages('RColorBrewer')
+library(hwriter)       # install.packages('hwriter')
+
+# working directory filepath
+wd  = '~/github/ohi-israel/med2014'
+
+
+## read in global/eez2014 scores
+# from final score release: github.com/OHI-Science/ohi-global/releases/tag/v2014.3
+v2014.3_url = 'https://raw.githubusercontent.com/OHI-Science/ohi-global/4da6b4a1d69d694264ea68456359a939b0c03f9c/eez2014/scores.csv'
+scores_v2014.3 = read.csv(v2014.3_url)
+
+# israel's region_id in the global assessment is 79
+scores_global_israel = scores_v2014.3 %>%            
+  filter(region_id == 79) %>%
+  mutate(goal = as.character(goal))
+
+
+
+## read in ohi-israel/med2014 scores         
+local_csv = file.path(wd, 'scores.csv')      
+scores_local = read.csv(local_csv) %>%
+  mutate(goal = as.character(goal))
+
+
+## join OHI+ and global scores
+
+scores_compare = scores_global_israel %>%   
+  select(goal, 
+         dimension,
+         score_global = score) %>%         
+  left_join(scores_local %>%
+              filter(region_id == 0) %>%
+              select(goal, 
+                     dimension, 
+                     score_local = score), 
+            by = c('goal', 'dimension')) %>%
+  filter(dimension %in% c('future', 'score', 'status')) %>%
+  mutate(score_diff = score_global - score_local)
+
+
+# display table of scores and differences
+kable(scores_compare) 
+
+## make an html file that is color coded:
+pal = brewer.pal(10, 'RdYlBu')
+
+# cols = data.frame(goal = scores_compare$goal)
+cols = scores_compare[, 'score_diff']
+cols = assign('score_diff', cut(cols, 
+                                 breaks=c(-100, -50, -30, -20, -10, 0, 10, 20, 30, 50, 100), 
+                                 include.lowest = TRUE, labels=pal))
+ 
+hwrite(scores_compare, 
+       file.path(wd, 'reports', 'compare_scores_OHIplus_global.html'), br=TRUE, center=TRUE, border=0, 
+       row.style=list(goal='text-align:center'), table.style='padding: 10px; margin:20px;', 
+       col.bgcolor=list(scenario='#fff',dimension='#fff',country='#fff', region_id='#fff', score_diff=cols))
+      
+
+```
+
+
