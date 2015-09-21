@@ -1,21 +1,9 @@
----
-title: "Global vs. Local Scores Comparison"
-output: html_document
----
+## Global OHI vs. Local OHI+ Scores Comparison
+# Run this script to produce a table of differences
 
-**This report compares OHI scores for Israel from the 2014 Global Assessment with OHI+ scores for Israel.**
-
-In the table below, scores from both assessments displayed with the differences between them (Global - Israel).  
-
-To view the same table with differences colored from blue to red, view the [comparison table online](https://rawgit.com/OHI-Science/ohi-israel/master/med2014/reports/compare_scores_OHIplus_global.html). Online, the differences are colored with dark blue indicating the largest positive difference and red indicating the largest negative difference. (Note: to update this link, knit this file by clicking the 'Knit HTML' button above and push changes). 
-
-```{r, echo=F, message=F}
-
-# setup
-
+## setup ---
 # libraries
 library(dplyr)
-library(knitr)
 library(RColorBrewer)  # install.packages('RColorBrewer')
 library(hwriter)       # install.packages('hwriter')
 
@@ -23,7 +11,7 @@ library(hwriter)       # install.packages('hwriter')
 wd  = '~/github/ohi-israel/med2014'
 
 
-## read in global/eez2014 scores
+## read in global/eez2014 scores ----
 # from final score release: github.com/OHI-Science/ohi-global/releases/tag/v2014.3
 v2014.3_url = 'https://raw.githubusercontent.com/OHI-Science/ohi-global/4da6b4a1d69d694264ea68456359a939b0c03f9c/eez2014/scores.csv'
 scores_v2014.3 = read.csv(v2014.3_url)
@@ -34,15 +22,13 @@ scores_global_israel = scores_v2014.3 %>%
   mutate(goal = as.character(goal))
 
 
-
 ## read in ohi-israel/med2014 scores         
 local_csv = file.path(wd, 'scores.csv')      
 scores_local = read.csv(local_csv) %>%
   mutate(goal = as.character(goal))
 
 
-## join OHI+ and global scores
-
+## join OHI+ and global scores ----
 scores_compare = scores_global_israel %>%   
   select(goal, 
          dimension,
@@ -57,10 +43,7 @@ scores_compare = scores_global_israel %>%
   mutate(score_diff = score_global - score_local)
 
 
-# display table of scores and differences
-kable(scores_compare) 
-
-## make an html file that is color coded:
+## make an html file that is color coded ----
 pal = brewer.pal(10, 'RdYlBu')
 
 # cols = data.frame(goal = scores_compare$goal)
@@ -74,7 +57,3 @@ hwrite(scores_compare,
        row.style=list(goal='text-align:center'), table.style='padding: 10px; margin:20px;', 
        col.bgcolor=list(scenario='#fff',dimension='#fff',country='#fff', region_id='#fff', score_diff=cols))
       
-
-```
-
-
