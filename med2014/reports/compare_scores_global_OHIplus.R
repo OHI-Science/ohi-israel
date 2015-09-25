@@ -40,20 +40,23 @@ scores_compare = scores_global_israel %>%
                      score_local = score), 
             by = c('goal', 'dimension')) %>%
   filter(dimension %in% c('future', 'score', 'status')) %>%
-  mutate(score_diff = score_global - score_local)
+  mutate(score_global = round(score_global, 1),
+         score_local  = round(score_local, 1),
+         score_diff = round(score_global - score_local, 1))
 
 
 ## make an html file that is color coded ----
 pal = brewer.pal(10, 'RdYlBu')
+pal = pal[1:9]
 
 # cols = data.frame(goal = scores_compare$goal)
 cols = scores_compare[, 'score_diff']
 cols = assign('score_diff', cut(cols, 
-                                 breaks=c(-100, -50, -30, -20, -10, 0, 10, 20, 30, 50, 100), 
+                                 breaks=c(-100, -50, -30, -20, -10, 0, 10, 20, 50, 100), 
                                  include.lowest = TRUE, labels=pal))
  
 hwrite(scores_compare, 
-       file.path(wd, 'reports', 'compare_scores_OHIplus_global.html'), br=TRUE, center=TRUE, border=0, 
+       file.path(wd, 'reports', 'compare_scores_global_OHIplus.html'), br=TRUE, center=TRUE, border=0, 
        row.style=list(goal='text-align:center'), table.style='padding: 10px; margin:20px;', 
        col.bgcolor=list(scenario='#fff',dimension='#fff',country='#fff', region_id='#fff', score_diff=cols))
       
